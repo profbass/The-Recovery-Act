@@ -87,6 +87,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
  *  ------------------------------------------
  */
 
+// Blog rout
+Route::get('blog', array('before' => 'detectLang','uses' => 'BlogController@getIndex'));
+
 // User reset routes
 Route::get('user/reset/{token}', 'UserController@getReset')
     ->where('token', '[0-9a-z]+');
@@ -109,15 +112,12 @@ Route::controller('user', 'UserController');
 Route::when('contact-us','detectLang');
 
 # Contact Us Static Page
-Route::get('contact-us', function()
-{
-    // Return about us page
-    return View::make('site/contact-us');
-});
+Route::get('contact-us', 'ContactController@index');
 
 # Posts - Second to last set, match slug
 Route::get('{postSlug}', 'BlogController@getView');
 Route::post('{postSlug}', 'BlogController@postView');
 
 # Index Page - Last route, no matches
-Route::get('/', array('before' => 'detectLang','uses' => 'BlogController@getIndex'));
+Route::get('/', 'HomeController@index');
+

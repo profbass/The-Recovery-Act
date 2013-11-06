@@ -16,6 +16,7 @@
 // Core variables and mixins
 @import "../../../../vendor/twbs/bootstrap/less/variables.less";
 @import "variables-custom.less"; // Modify this for custom colors, font-sizes, etc
+@import url(http://fonts.googleapis.com/css?family=Poly|Open+Sans);//google font import
 
 @import "../../../../vendor/twbs/bootstrap/less/mixins.less";
 
@@ -71,6 +72,8 @@
 // -------------------------------------------------------------
 // -------------------------------------------------------------
 
+@import "styles.less"; // Custom Styles
+
 /*!
  * Custom CSS
  *
@@ -91,11 +94,10 @@
     height: 60px;
 }
 #footer {
-    background-color: #f5f5f5;
 }
 
 
-#wrap > .container {
+#wrap > #content > section {
     padding-top: 60px;
 }
 .container .credit {

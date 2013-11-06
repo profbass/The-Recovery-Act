@@ -44,7 +44,7 @@
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
 		<!-- Navbar -->
-		<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
+		<div id="topNav" class="navbar navbar-default navbar-fixed-top">
 			 <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -78,7 +78,7 @@
 		<!-- ./ navbar -->
 
 		<!-- Container -->
-		<div class="container">
+		<div id="content">
 			<!-- Notifications -->
 			@include('notifications')
 			<!-- ./ notifications -->
@@ -95,9 +95,9 @@
 		<!-- ./wrap -->
 
 
-	    <div id="footer">
+	    <div id="footer" class="navbar navbar-fixed-bottom">
 	      <div class="container">
-	        <p class="muted credit">Laravel 4 Starter Site on <a href="https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site">Github</a>.</p>
+	        <p class="muted credit">&copy; The Recovery Act 2013</p>
 	      </div>
 	    </div>
 
