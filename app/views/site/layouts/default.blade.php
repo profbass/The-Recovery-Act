@@ -60,16 +60,18 @@
 					</ul>
 
                     <ul class="nav navbar-nav pull-right">
-                        @if (Auth::check())
-                        @if (Auth::user()->hasRole('admin'))
-                        <li><a href="{{{ URL::to('admin') }}}">Admin Panel</a></li>
-                        @endif
-                        <li><a href="{{{ URL::to('user') }}}">Logged in as {{{ Auth::user()->username }}}</a></li>
-                        <li><a href="{{{ URL::to('user/logout') }}}">Logout</a></li>
-                        @else
-                        <li {{ (Request::is('user/login') ? ' class="active"' : '') }}><a href="{{{ URL::to('user/login') }}}">Login</a></li>
-                        <li {{ (Request::is('user/register') ? ' class="active"' : '') }}><a href="{{{ URL::to('user/create') }}}">{{{ Lang::get('site.sign_up') }}}</a></li>
-                        @endif
+                        <li>
+                        	<span class="fa-stack fa-lg ">
+							  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+							  <i class="fa fa-facebook fa-stack-1x"></i>
+							</span>
+                        </li>
+                        <li>
+                        	<span class="fa-stack fa-lg">
+							  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+							  <i class="fa fa-twitter fa-stack-1x"></i>
+							</span>
+                        </li>
                     </ul>
 					<!-- ./ nav-collapse -->
 				</div>

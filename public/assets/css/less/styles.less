@@ -1,6 +1,6 @@
 body{
 	background: #222;
-    color: #f5f5f5;
+    //color: #f5f5f5;
 }
 .btn{
 	border-radius: 0;
@@ -8,8 +8,8 @@ body{
 
 // Custom google fonts
 h1, h2, h3, h4{
-    //font-family: 'Poly', serif;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poly', serif;
+    //font-family: 'Open Sans', sans-serif;
 }
 p, .nav, li, .alert{
     font-family: 'Open Sans', sans-serif;
@@ -28,8 +28,8 @@ p, .nav, li, .alert{
 // Parallax
 
 #home { 
-	background: url(/assets/img/bg-concert.jpg) 50% 0 no-repeat fixed; 
-	height: 1000px;  
+	background: url(/assets/img/bg-concert.jpg) 50% 800% no-repeat fixed; 
+	height: 500px;  
 	margin: 0 auto; 
     width: 100%; 
     max-width: 1920px; 
@@ -37,11 +37,12 @@ p, .nav, li, .alert{
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
 }
 #about { 
-	//background: url(../img/about.jpg) 50% 0 no-repeat fixed; 
-	background: #f2f2f2;
+	background: url(/assets/img/bg-paper.jpg); 
+	//background: #f2f2f2;
 	height: 1000px;
 	margin: 0 auto; 
     width: 100%; 
+    color: #4f4f4f;
     max-width: 1920px; 
     position: relative; 
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
@@ -57,13 +58,20 @@ p, .nav, li, .alert{
 	top: 291px; 
 	width: 100%; 
 }
-
-#about article { 
-	//background: url("../img/parallax.png") no-repeat scroll center top transparent; 
-	height: 458px; 
-	position: absolute; 
-	text-indent: -9999px; 
-	top: 291px; 
-	width: 100%; 
+#circleLeaf{
+	position: absolute;
+	top:-70px;
+	left:45%;
 }
+#circleLeaf .fa-pagelines{
+	color: #f9f8f6;
+}
+// #about article { 
+// 	//background: url("../img/parallax.png") no-repeat scroll center top transparent; 
+// 	height: 458px; 
+// 	position: absolute; 
+// 	text-indent: -9999px; 
+// 	top: 291px; 
+// 	width: 100%; 
+// }
 
