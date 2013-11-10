@@ -1,8 +1,5 @@
 @extends('site.layouts.default')
 {{-- Web site Title --}}
-@section
-  {{ $isHome = 'yes' }}
-@endsection
 
 @section('title')
 	{{{ Lang::get('Home Page') }}}
@@ -26,7 +23,7 @@ Since all we need to do is control the speed of the background images, we’ll u
 		  	<h2>Heading For Things</h2>
 		  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
 Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
-		  	<button class="btn btn-md">SIGN UP FOR OUR NEWS LETTER</button>
+		  	<button class="btn btn-md btn-primary btn-lg">SIGN UP FOR OUR NEWS LETTER</button>
 		  </div>
 	 	 </div>
 	 </div>
@@ -37,7 +34,7 @@ Since all we need to do is control the speed of the background images, we’ll u
 	<div id="circleLeaf">
 		<span class="fa-stack fa-lg fa-5x">
 		  <i class="fa fa-circle fa-stack-2x "></i>
-		  <i class="fa fa-pagelines fa-stack-1x fa-inverse"></i>
+		  <i class="fa fa-sun-o fa-stack-1x fa-inverse"></i>
 		</span>
 	</div>
   <article>
@@ -47,20 +44,24 @@ Since all we need to do is control the speed of the background images, we’ll u
 		  	<h2>Heading For Things</h2>
 		  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
 Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
-			<div class="input-group margin-bottom-sm">
-			  <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-			  <input class="form-control" type="text" placeholder="Email address">
+			<div class="form-group">
+				<div class="input-group">
+				  <span class="input-group-addon"><i class="fa fa-smile-o fa-fw"></i></span>
+				  <input class="form-control" type="name" placeholder="Name">
+				</div>
 			</div>
-			<div class="input-group">
-			  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-			  <input class="form-control" type="password" placeholder="Password">
+			<div class="form-group">
+				<div class="input-group">
+				  <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+				  <input class="form-control" type="text" placeholder="Email address">
+				</div>
 			</div>
 		  </div>
 		  <div class="col-md-6">
 		  	<h2>Heading For Things</h2>
 		  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
 Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
-		  	<button class="btn btn-md">SIGN UP FOR OUR NEWS LETTER</button>
+		  	<button class="btn btn-md btn-primary btn-lg">SIGN UP FOR OUR NEWS LETTER</button>
 		  </div>
 	 	 </div>
 	 </div>

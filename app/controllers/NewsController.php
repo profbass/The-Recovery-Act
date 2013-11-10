@@ -32,6 +32,7 @@ class NewsController extends BaseController {
 	public function store()
 	{
 		//
+		return 'new news article';
 	}
 
 	/**
@@ -42,7 +43,9 @@ class NewsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('news.show');
+		$news = news::find($id);
+
+        return View::make('news.show', compact('news'));
 	}
 
 	/**
@@ -53,7 +56,9 @@ class NewsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('news.edit');
+		$news = news::find($id);
+
+        return View::make('news.edit', compact('news'));
 	}
 
 	/**
@@ -64,7 +69,7 @@ class NewsController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$news = news::update($id);
 	}
 
 	/**

@@ -78,7 +78,7 @@
 		<!-- ./ navbar -->
 
 		<!-- Container -->
-			<div id="content">
+		<div id="content">
 			<!-- Notifications -->
 			@include('notifications')
 			<!-- ./ notifications -->
@@ -95,7 +95,7 @@
 		<!-- ./wrap -->
 
 
-	    <div id="footer" class="navbar navbar-fixed-bottom">
+	    <div id="footer" class="navbar">
 	      <div class="container">
 	        <p class="muted credit">&copy; The Recovery Act 2013</p>
 	      </div>
