@@ -108,8 +108,11 @@ Route::controller('user', 'UserController');
 
 //:: Application Routes ::
 
+//New Controller
+Route::resource('news', 'NewsController');
+
 # Filter for detect language
-Route::when('contact-us','detectLang');
+Route::resource('photos','PhotosController');
 
 # Contact Us Static Page
 Route::get('contact-us', 'ContactController@index');

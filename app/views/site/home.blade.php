@@ -1,15 +1,16 @@
 @extends('site.layouts.default')
 {{-- Web site Title --}}
+@section
+  {{ $isHome = 'yes' }}
+@endsection
+
 @section('title')
-{{{ Lang::get('site.home') }}} ::
-@parent
+	{{{ Lang::get('Home Page') }}}
+	@parent
 @stop
 
 {{-- Content --}}
 @section('content')
-
-
-
 
 <!-- Section #1 -->
 <section id="home" data-speed="10" data-type="background">
@@ -65,8 +66,6 @@ Since all we need to do is control the speed of the background images, we’ll u
 	 </div>
   </article>
 </section>
-
-
 
 
 @stop

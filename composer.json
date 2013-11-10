@@ -11,6 +11,7 @@
     ],
 	"require": {
 		"laravel/framework": "4.0.*",
+		"way/generators": "1.0.*@dev",
 		"twbs/bootstrap":  "3.0.*",
 		"zizaco/confide": "dev-master",
 		"zizaco/entrust": "dev-master",
@@ -20,7 +21,7 @@
         "bllim/datatables": "*"
 	},
 	"require-dev": {
-        "way/generators": "dev-master",
+        "way/generators": "1.0.*@dev",
         "mockery/mockery": "dev-master@dev",
         "summerstreet/woodling": "0.1.*",
         "barryvdh/laravel-ide-helper": "dev-master",

@@ -4,13 +4,11 @@
 		<!-- Basic Page Needs
 		================================================== -->
 		<meta charset="utf-8" />
-		<title>
-			@section('title')
-			Laravel 4 Sample Site
-			@show
+		<title>The Recovery Act @section('title')
+		@show
 		</title>
 		<meta name="keywords" content="your, awesome, keywords, here" />
-		<meta name="author" content="Jon Doe" />
+		<meta name="author" content="Tyler Olmsted" />
 		<meta name="description" content="Lorem ipsum dolor sit amet, nihil fabulas et sea, nam posse menandri scripserit no, mei." />
 
 		<!-- Mobile Specific Metas
@@ -80,7 +78,7 @@
 		<!-- ./ navbar -->
 
 		<!-- Container -->
-		<div id="content">
+			<div id="content">
 			<!-- Notifications -->
 			@include('notifications')
 			<!-- ./ notifications -->
