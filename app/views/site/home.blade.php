@@ -67,6 +67,9 @@ Since all we need to do is control the speed of the background images, we’ll u
 	 </div>
   </article>
 </section>
+<!-- Section #2 -->
+<section id="shows" data-speed="4" data-type="background">
+</section>
 
 
 @stop

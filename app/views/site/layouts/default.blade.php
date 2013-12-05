@@ -95,7 +95,7 @@
 		<!-- ./wrap -->
 
 
-	    <div id="footer" class="navbar">
+	    <div id="footer">
 	      <div class="container">
 	        <p class="muted credit">&copy; The Recovery Act 2013</p>
 	      </div>
