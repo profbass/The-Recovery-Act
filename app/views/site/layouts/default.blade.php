@@ -55,20 +55,27 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
 						<li {{ (Request::is('/') ? ' class="active"' : '') }}><a href="{{{ URL::to('') }}}">Home</a></li>
+						<li {{ (Request::is('/news') ? ' class="active"' : '') }}><a href="{{{ URL::to('/news') }}}">News</a></li>
+						<li {{ (Request::is('/contact-us') ? ' class="active"' : '') }}><a href="{{{ URL::to('/contact-us') }}}">Contact Us</a></li>
+						<li {{ (Request::is('/blog') ? ' class="active"' : '') }}><a href="{{{ URL::to('/blog') }}}">Blog</a></li>
 					</ul>
 
                     <ul class="nav navbar-nav pull-right">
                         <li>
-                        	<span class="fa-stack fa-lg ">
-							  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-							  <i class="fa fa-facebook fa-stack-1x"></i>
-							</span>
+                        	<a href="https://www.facebook.com/TheRecoveryAct" target="_blank" title="" class="sn-links facebook">
+	                        	<span class="fa-stack fa-lg fa-1x">
+								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+								  <i class="fa fa-facebook fa-stack-1x"></i>
+								</span>
+							</a>
                         </li>
                         <li>
-                        	<span class="fa-stack fa-lg">
-							  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-							  <i class="fa fa-twitter fa-stack-1x"></i>
-							</span>
+	                        <a href="#" target="_blank" title="" class="sn-links twitter">
+	                        	<span class="fa-stack fa-lg fa-1x">
+								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+								  <i class="fa fa-twitter fa-stack-1x"></i>
+								</span>
+							</a>
                         </li>
                     </ul>
 					<!-- ./ nav-collapse -->

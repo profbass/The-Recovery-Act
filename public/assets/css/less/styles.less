@@ -23,10 +23,37 @@ p, .nav, li, .alert, .btn, input, textarea{
 	background: transparent !important; 
 	border: none;
 }
+.navbar-default .navbar-nav > li > a {
+	color: #f2f2f2;
+}
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
 	background: transparent !important; 
+}
+.navbar-nav > li > a.sn-links{
+	padding: 10px 10px 0 0;
+} 
+.navbar-nav > li > a.sn-links .fa-stack{
+	opacity:0.8;
+}
+.navbar-nav > li > a.facebook .fa-circle{
+	color: #3B5998 ;
+}
+.navbar-nav > li > a.facebook:hover .fa-circle{
+	color: #3B5998 ;
+}
+.navbar-nav > li > a.twitter .fa-circle{
+	color: #4099FF ;
+}
+#bookmarkPopup.open{
+	-webkit-transition-property: bottom;
+	-webkit-transition-duration: 0.3s;
+}
+#bookmarkPopup.close{
+	bottom:-135px; 
+	-webkit-transition-property: bottom;
+	-webkit-transition-duration: 0.3s;
 }
 
 // Parallax
