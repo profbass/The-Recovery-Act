@@ -1,41 +1,25 @@
-/**
- * Parallax Scrolling Tutorial
- * For NetTuts+
- *  
- * Author: Mohiuddin Parekh
- *	http://www.mohi.me
- * 	@mohiuddinparekh   
- */
-
-
-$(document).ready(function(){
-	alert("Loadinf");
-	// Cache the Window object
-	$window = $(window);
-                
-   $('section[data-type="background"]').each(function(){
-     	var $bgobj = $(this); // assigning the object
-                    
-      	$(window).scroll(function() {
-                    
-		// Scroll the background at var speed
-		// the yPos is a negative value because we're scrolling it UP!								
-		var yPos = -($window.scrollTop() / $bgobj.data('speed')); 
-		
-		// Put together our final background position
-		var coords = '50% '+ yPos + 'px';
-
-		// Move the background
-		$bgobj.css({ backgroundPosition: coords });
-		
-	}); // window scroll Ends
-
- });	
-
-// }); 
-/* 
- * Create HTML5 elements for IE's sake
- */
-
-document.createElement("article");
-document.createElement("section");
+// Parallax Plugin Code
+(function($){
+    $.fn.parallax = function(options){
+        var $$ = $(this);
+        offset = $$.offset();
+        var defaults = {
+            "start": 0,
+            "stop": offset.top + $$.height(),
+            "coeff": 0.95
+        };
+        var opts = $.extend(defaults, options);
+        return this.each(function(){
+            $(window).bind('scroll', function() {
+                windowTop = $(window).scrollTop();
+                if((windowTop >= opts.start) && (windowTop <= opts.stop)) {
+                    newCoord = windowTop * opts.coeff;
+                    $$.css({
+                        "postion" : "relative",
+                        "top": newCoord + "px"
+                    });
+                }
+            });
+        });
+    };
+})(jQuery);

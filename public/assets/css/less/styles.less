@@ -11,11 +11,11 @@ body{
 }
 
 // Custom google fonts
-h1, h2, h3, h4{
+h1, h2, h3, h4, .nav a{
     font-family: 'Poly', serif;
     //font-family: 'Open Sans', sans-serif;
 }
-p, .nav, li, .alert, .btn, input, textarea{
+p, li, .alert, .btn, input, textarea{
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -23,16 +23,19 @@ p, .nav, li, .alert, .btn, input, textarea{
 	background: transparent !important; 
 	border: none;
 }
-.navbar-default .navbar-nav > li > a {
-	color: #f2f2f2;
+.left-nav.navbar-nav > li > a {
+	color: #333;
+	font-size: 1.5em;
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
 	background: transparent !important; 
 }
+/* Social Network Things */
 .navbar-nav > li > a.sn-links{
-	padding: 10px 10px 0 0;
+	padding: 10px 0 0 0;
+	color: #fff;
 } 
 .navbar-nav > li > a.sn-links .fa-stack{
 	opacity:0.8;
@@ -43,8 +46,17 @@ p, .nav, li, .alert, .btn, input, textarea{
 .navbar-nav > li > a.facebook:hover .fa-circle{
 	color: #3B5998 ;
 }
+.navbar-nav > li > a.email .fa-circle{
+	color: #d9534f ;
+}
+.navbar-nav > li > a.email:hover .fa-circle{
+	color: #d2322d ;
+}
 .navbar-nav > li > a.twitter .fa-circle{
 	color: #4099FF ;
+}
+.navbar-nav > li > a:hover .fa-stack-1x{
+	color: #fff;
 }
 #bookmarkPopup.open{
 	-webkit-transition-property: bottom;
@@ -58,61 +70,74 @@ p, .nav, li, .alert, .btn, input, textarea{
 
 // Parallax
 #home { 
-	background: url(/assets/img/bg-band.jpg) 50% 0 fixed; 
-	//background-position: 0 -75px;
-	background-size: auto 100%;
-	min-height: 600px;  
-	margin: 0 auto; 
-    width: 100%; 
-    max-width: 1920px; 
-    position: relative; 
-    box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+	background: url(/assets/img/bg-tra1.jpg) 50% 0 no-repeat fixed;
+	background-size: 100% auto;
+	color: white;
+	height: 600px;
+	margin: 0 auto;
+	padding: 0;
 }
-#news { 
+#home-nav-bar { 
 	background: url(/assets/img/bg-paper.jpg); 
-	min-height: 420px;
-	margin: 0 auto; 
+	height: 75px;
     width: 100%; 
     color: #4f4f4f;
-    max-width: 1920px; 
     position: relative; 
+}
+#home-nav-bar .container {
+	position: relative;
+	width: 100%;
+	top: -50px;
 }
 #signup { 
-	background: url(/assets/img/bg-paper.jpg); 
-	min-height: 420px;
-	margin: 0 auto; 
-    width: 100%; 
-    color: #4f4f4f;
-    max-width: 1920px; 
-    position: relative; 
+	background: url(/assets/img/bg-paper.jpg) 50% 0 fixed;
+	height: 400px;
+	padding: 100px 0 0 0;
 }
 #about { 
-	background: url(/assets/img/bg-wood.png) fixed; 
-	background-size: 50% auto;
-	min-height: 600px;  
-	margin: 0 auto; 
-    width: 100%; 
-    max-width: 1920px; 
-    position: relative; 
-    box-shadow: inset 0 0 50px rgba(0,0,0,0.6);
+	background: url(/assets/img/bg-wood.png) 50% 0 fixed;
+	background-size: 30% auto;
+	height: 400px;
+	margin: 0 auto;
+}
+#guitar{
+	background: url(/assets/img/pic-aoustic-guitar.png) 175% 0 no-repeat fixed;
+	background-size: 70% auto;
+	height: 400px;
+	margin: 0 auto;
+	padding: 0;
+	position: absolute;
+	width: 540px;
+	right:0;
+	z-index: 200;
+	top: 675px;
 }
 #shows { 
-	background: url(/assets/img/bg-concert.jpg) fixed; 
-	background-repeat: no-repeat;
-	background-position: bottom;
-	background-size: auto 100%;
-	min-height: 500px;  
-	margin: 0 auto; 
-    width: 100%; 
-    max-width: 1920px; 
-    position: relative; 
-    box-shadow: inset 0 0 50px rgba(0,0,0,0.9);
+	background: url(/assets/img/bg-concert.jpg) 50% 0 no-repeat fixed;
+	background-size: 130% auto;
+	color: white;
+	height: 500px;
+	padding: 0 0 0 0;
+}
+
+#showsBody { 
+	background: url(/assets/img/pic-aoustic-guitar.png) no-repeat;
+	background-size: auto 50%;
+	height:500px;
+	width:500px;
+    position: relative;
+}
+section article{
+	margin: 0 auto;
+	min-width: 980px;
+	overflow: auto;
+	width: 980px;
 }
 
 /* Introduction */
 
 #home logo { 
-	//background: url("../img/intro.png") no-repeat scroll center top transparent; 
+	//background: url("../img/bg-btn-texture.png") no-repeat scroll center top transparent; 
 	height: 458px; 
 	position: absolute; 
 	text-indent: -9999px; 
@@ -121,8 +146,12 @@ p, .nav, li, .alert, .btn, input, textarea{
 }
 #circleLeaf{
 	position: absolute;
-	top:-70px;
+	top:-15px;
 	left:45%;
+	z-index: 1000;
+}
+#circleLeaf .fa-circle:before{
+	//background: url(/assets/img/bg-btn-texture.png) #ff00ff; 
 }
 #circleLeaf .fa-pagelines{
 	color: #f9f8f6;

@@ -53,14 +53,23 @@
                     </button>
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav left-nav">
 						<li {{ (Request::is('/') ? ' class="active"' : '') }}><a href="{{{ URL::to('') }}}">Home</a></li>
-						<li {{ (Request::is('/news') ? ' class="active"' : '') }}><a href="{{{ URL::to('/news') }}}">News</a></li>
-						<li {{ (Request::is('/contact-us') ? ' class="active"' : '') }}><a href="{{{ URL::to('/contact-us') }}}">Contact Us</a></li>
+						<li {{ (Request::is('/news') ? ' class="active"' : '') }}><a href="{{{ URL::to('/news') }}}">Shows</a></li>
+						<li {{ (Request::is('/band') ? ' class="active"' : '') }}><a href="{{{ URL::to('/band') }}}">Band</a></li>
+						<li {{ (Request::is('/photos') ? ' class="active"' : '') }}><a href="{{{ URL::to('/photos') }}}">Photos</a></li>
 						<li {{ (Request::is('/blog') ? ' class="active"' : '') }}><a href="{{{ URL::to('/blog') }}}">Blog</a></li>
 					</ul>
 
-                    <ul class="nav navbar-nav pull-right">
+                    <ul class="nav navbar-nav pull-right sn-list">
+                    <li>
+                        	<a href="{{{ URL::to('/contact-us') }}}" target="_blank" title="" class="sn-links email">
+	                        	<span class="fa-stack fa-lg fa-1x">
+								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+								  <i class="fa fa-envelope-o fa-stack-1x"></i>
+								</span>
+							</a>
+                        </li>
                         <li>
                         	<a href="https://www.facebook.com/TheRecoveryAct" target="_blank" title="" class="sn-links facebook">
 	                        	<span class="fa-stack fa-lg fa-1x">

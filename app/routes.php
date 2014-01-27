@@ -108,10 +108,13 @@ Route::controller('user', 'UserController');
 
 //:: Application Routes ::
 
-//New Controller
+//News Controller
 Route::resource('news', 'NewsController');
 
-# Filter for detect language
+//Band Bio Controller
+Route::resource('band','BandBioController');
+
+//Photos Controller
 Route::resource('photos','PhotosController');
 
 # Contact Us Static Page
