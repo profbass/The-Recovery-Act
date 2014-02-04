@@ -78,7 +78,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
     Route::controller('roles', 'AdminRolesController');
 
     # Admin Dashboard
-    Route::controller('/', 'AdminDashboardController');
+    Route::get('/', 'AdminDashboardController');
 });
 
 
@@ -112,7 +112,7 @@ Route::controller('user', 'UserController');
 Route::resource('news', 'NewsController');
 
 //Band Bio Controller
-Route::resource('band','BandBioController');
+Route::resource('band','BandController');
 
 //Photos Controller
 Route::resource('photos','PhotosController');

@@ -9,7 +9,7 @@
 {{-- Content --}}
 @section('content')
 <!-- Section #1 -->
-<section id="home" data-speed="10" data-type="background">
+<section id="home" class="parallax" data-speed="0.1">
    <article>
    	<div class="container">
    		<!-- <div class="row">
@@ -76,8 +76,8 @@ Since all we need to do is control the speed of the background images, we’ll u
 	</div> 
 </section>
 <!-- Section #3 -->
-<section id="about">
-	<div class="bg pull-right" id="guitar"></div>
+<section id="about" class="parallax">
+	<div id="guitar" class="pull-right parallax animatedElement" data-animation="slideUp" data-pos="114%" data-speed="0.8"></div>
 	<article class="bg">
 	   	<div class="container">
 	   		<div class="row">
@@ -109,40 +109,22 @@ Since all we need to do is control the speed of the background images, we’ll u
 	</article>
 </section>
 <!-- Section #2 -->
-<section id="signup">
+<section id="signup" class="parallax" data-speed="0.1" data-pos="-100px">
   <article class="bg">
    	<div class="container">
    		<div class="row">
 		  <div class="col-md-6">
-		  	<h2>Heading For Things</h2>
-		  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
-Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
-			<div class="form-group">
-				<div class="input-group">
-				  <span class="input-group-addon"><i class="fa fa-smile-o fa-fw"></i></span>
-				  <input class="form-control" type="name" placeholder="Name">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="input-group">
-				  <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-				  <input class="form-control" type="text" placeholder="Email address">
-				</div>
-			</div>
+		  	
 		  </div>
 		  <div class="col-md-6">
-		  	<h2>Heading For Things</h2>
-		  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
-Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
-		  	<button class="btn btn-md btn-danger btn-lg">SIGN UP FOR OUR NEWS LETTER</button>
-		  </div>
+		  	
 	 	 </div>
 	 </div>
   </article>
 </section>
 <!-- Section #4 -->
-<section id="shows">
-  <article class="bg">
+<section id="shows" class="parallax" data-speed="0.7">
+  <article class="animatedElement" data-animation="slideUp">
    	<div class="container">
 	   	<div class="row">
 			<div class="col-md-6">

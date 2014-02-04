@@ -42,7 +42,7 @@
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
 		<!-- Navbar -->
-		<div id="topNav" class="navbar navbar-default navbar-fixed-top">
+		<div id="topNav" class="navbar navbar-default navbar-fixed-top" style="display:none;">
 			 <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -89,6 +89,13 @@
                     </ul>
 					<!-- ./ nav-collapse -->
 				</div>
+				
+	<div id="circleLeaf">
+		<span class="fa-stack fa-lg fa-5x">
+		  <i class="fa fa-circle fa-stack-2x "></i>
+		  <i class="fa fa-sun-o fa-stack-1x fa-inverse"></i>
+		</span>
+	</div> 
 			</div>
 		</div>
 		<!-- ./ navbar -->
