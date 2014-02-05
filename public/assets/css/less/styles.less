@@ -6,68 +6,83 @@ body{
 	border-radius: 0;
 }
 
-.fa-circle, .btn-primary{
+.btn-primary{
 	background-image: url(/assets/img/bg-texture.png); 
 }
 
 // Custom google fonts
-h1, h2, h3, h4, .nav a{
-    font-family: 'Poly', serif;
+h1, h2{
+    font-family: 'Headland One', serif;
     //font-family: 'Open Sans', sans-serif;
 }
-p, li, .alert, .btn, input, textarea{
+h3, h4{
+    font-family: 'Rock Salt', serif;
+    //font-family: 'Open Sans', sans-serif;
+}
+p, li, .alert, .btn, input, textarea, nav{
     font-family: 'Open Sans', sans-serif;
 }
 
-#topNav{
+nav{
 	background: url(/assets/img/bg-paper.jpg); 
-	height: 75px;
     width: 100%; 
     color: #4f4f4f;
 }
-.left-nav.navbar-nav > li > a {
+ .nav a {
 	color: #333;
-	font-size: 1.5em;
+	font-size: 1em;
+	font-weight: 600;
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
 	background: transparent !important; 
 }
-/* Social Network Things */
-.navbar-nav > li > a.sn-links{
-	padding: 10px 0 0 0;
-	color: #fff;
-} 
-.navbar-nav > li > a.sn-links .fa-stack{
-	opacity:0.8;
-}
-.navbar-nav > li > a.facebook .fa-circle{
-	color: #3B5998 ;
-}
-.navbar-nav > li > a.facebook:hover .fa-circle{
-	color: #3B5998 ;
-}
-.navbar-nav > li > a.email .fa-circle{
-	color: #d9534f ;
-}
-.navbar-nav > li > a.email:hover .fa-circle{
-	color: #d2322d ;
-}
-.navbar-nav > li > a.twitter .fa-circle{
-	color: #4099FF ;
-}
-.navbar-nav > li > a:hover .fa-stack-1x{
-	color: #fff;
-}
-#bookmarkPopup.open{
-	-webkit-transition-property: bottom;
-	-webkit-transition-duration: 0.3s;
-}
-#bookmarkPopup.close{
-	bottom:-135px; 
-	-webkit-transition-property: bottom;
-	-webkit-transition-duration: 0.3s;
+
+//Social Network Icon Styles
+
+ul.sn-list {
+	margin: 0;
+	padding: 0;
+	li {
+		a.sn-links{
+			padding: 7px 0 0 0;
+			color: #fff;
+			.fa-stack{
+				opacity:0.8;
+			}
+		}
+		a.facebook{
+			.fa-circle{
+				color: #3B5998 ;
+			}
+		}
+		a.facebook:hover {
+			.fa-circle{
+				color: #3B5998 ;
+			}
+		}
+		a.email {
+			.fa-circle{
+				color: #d9534f ;
+			}
+		}
+		a.email:hover {
+			.fa-circle{
+				color: #d2322d ;
+			}
+		}
+		a.twitter {
+			.fa-circle{
+				color: #4099FF ;
+			}
+		}
+		a:hover {
+			.fa-stack-1x{
+				color: #fff ;
+			}
+		}
+	}
 }
 
 // Parallax
@@ -79,40 +94,28 @@ p, li, .alert, .btn, input, textarea{
 	margin: 0 auto;
 	padding: 0;
 }
-#home-nav-bar { 
-	background: url(/assets/img/bg-paper.jpg); 
-	height: 75px;
-    width: 100%; 
-    color: #4f4f4f;
-    position: relative;
-}
-#home-nav-bar .container {
-	position: relative;
-	width: 100%;
-	top: -50px;
-}
 #signup { 
-	background: url(/assets/img/bg-field.jpg) 50% 0 fixed;
+	background: url(/assets/img/bg-stardust.png) 50% 0 fixed;
 	height: 300px;
 	padding: 100px 0 0 0;
+	color: #f2f2f2;
 }
 #about { 
 	background: url(/assets/img/bg-wood.png) 50% 0 fixed;
 	background-size: 30% auto;
 	height: 400px;
+	width: 100%;
 	margin: 0 auto;
-}
-#guitar{
-	background: url(/assets/img/pic-microphone.png) 175% 0 no-repeat fixed;
-	background-size: 600px auto;
-	height: 400px;
-	margin: 0 auto;
-	padding: 0;
-	position: absolute;
-	width: 540px;
-	right:0;
-	z-index: 200;
-	top: 675px;
+	z-index: 100;
+	padding-top: 0 !important;
+	#mic{
+		background: url(/assets/img/pic-microphone.png) 175% 0 no-repeat fixed;
+		background-size: 600px auto;
+		height: 400px;
+		width: 100%;
+		right:0;
+		z-index: 200;
+	}
 }
 #shows { 
 	background: url(/assets/img/bg-concert.jpg) 50% 0 no-repeat fixed;
@@ -122,24 +125,9 @@ p, li, .alert, .btn, input, textarea{
 	padding: 0 0 0 0;
 }
 
-#showsBody { 
-	background: url(/assets/img/pic-aoustic-guitar.png) no-repeat;
-	background-size: auto 50%;
-	height:500px;
-	width:500px;
-    position: relative;
-}
-section article{
-	margin: 0 auto;
-	min-width: 980px;
-	overflow: auto;
-	width: 980px;
-}
-
 /* Introduction */
 
 #home logo { 
-	//background: url("../img/bg-btn-texture.png") no-repeat scroll center top transparent; 
 	height: 458px; 
 	position: absolute; 
 	text-indent: -9999px; 
@@ -153,7 +141,6 @@ section article{
 	z-index: 1000;
 }
 #circleLeaf .fa-circle:before{
-	//background: url(/assets/img/bg-btn-texture.png) #ff00ff; 
 }
 #circleLeaf .fa-pagelines{
 	color: #f9f8f6;
@@ -165,41 +152,129 @@ section article{
 	height: 300px;
 }
 
-/** band styles **/
-#lindsay { 
-	background: url(/assets/img/pic-band-lindsay.jpg) 50% 0 fixed;
-	background-size: 100% auto;
-	z-index: 1000;
-	padding-top: 0;
+/************** 
+***************
+band page styles 
+**************
+**************/
+section#band-wrapper{
+	article#Lindsay { 
+		background: url(/assets/img/pic-band-lindsay.jpg) 50% 0 fixed;
+		background-size: 100% auto;
+		.top-parallax{
+			background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+			background-size: 100% auto;
+		}
+	}
+	article#Eagle { 
+		background: url(/assets/img/pic-band-eagle.jpg) 50% 0 fixed;
+		background-size: 100% auto;
+		.top-parallax{
+			//background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+			background-size: 100% auto;
+		}
+	}
+	article#Jeff { 
+		background: url(/assets/img/pic-band-bird-dog.jpg) 50% 0 fixed;
+		.top-parallax{
+			//background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+			background-size: auto 1000px;
+		}
+	}
+	article#Willy { 
+		background: url(/assets/img/pic-band-willy.jpg) 50% 0 fixed;
+		.top-parallax{
+			//background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+		}
+	}
+	article#Tyler { 
+		background: url(/assets/img/pic-band-tyler.jpg) 50% 0 fixed;
+		.top-parallax{
+			//background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+		}
+	}
+	article#Christian { 
+		background: url(/assets/img/pic-band-christian.jpg) 50% 0 fixed;
+		background-size: auto 1000px;
+		.top-parallax{
+			//background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+		}
+	}
+	article.band-list{ 
+		padding-top: 0 !important;
+		color: #333;
+		z-index: 1000;
+		width: 100%;
+		margin: 0;
+		.top-parallax{
+			background-size: auto 1000px !important;
+			z-index: 2000;
+			width: 100%;
+			margin: 0;
+			.container{
+				padding-top:100px;
+				h3{
+					color: #d9534f;
+				}
+				.sn-list{
+					list-style: none;
+					li{
+						float: left;
+						margin-right:8px;
+					}
+				}
+			}
+		}
+	}
 }
-#lindsay-cutout { 
-	background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
-	background-size: 100% auto;
-	z-index: 2000;
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+	section#band-wrapper{
+		article.band-list{ 
+			height: 350px;
+			background-size: auto 768px !important;
+			.top-parallax{
+				background-size: auto 768px !important;
+				height: 350px;
+			}
+		}
+	}
+
 }
-#eagle { 
-	background: url(/assets/img/pic-band-eagle.jpg) 50% 0 fixed;
-	background-size: 100% auto;
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px ) {
+
+	section#band-wrapper{
+		article.band-list{ 
+			height: 450px;
+			background-size: auto 992px !important;
+			.top-parallax{
+				background-size: auto 992px !important;
+				height: 450px;
+			}
+		}
+	}
+
 }
-#birddog { 
-	background: url(/assets/img/pic-band-bird-dog.jpg) 50% 0 fixed;
-	background-size: 100% auto;
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+	section#band-wrapper{
+		article.band-list{ 
+			height: 700px;
+			background-size: auto 1000px !important;
+			.top-parallax{
+				background-size: auto 1000px !important;
+				height: 700px;
+			}
+		}
+	}
+
 }
-#willy { 
-	background: url(/assets/img/pic-band-willy.jpg) 50% 0 fixed;
-	background-size: 100% auto;
-}
-#tyler { 
-	background: url(/assets/img/pic-band-tyler.jpg) 50% 0 fixed;
-	background-size: 100% auto;
-}
-#christian { 
-	background: url(/assets/img/pic-band-christian.jpg) 50% 0 fixed;
-	background-size: 100% auto;
-}
-.band-list{ 
-	height: 600px;
-	padding: 100px 0 0 0;
-	color: #fff;
-}
+
 

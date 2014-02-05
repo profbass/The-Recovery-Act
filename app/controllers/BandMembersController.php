@@ -1,6 +1,6 @@
 <?php
 
-class BandController extends BaseController {
+class BandMembersController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,8 +9,10 @@ class BandController extends BaseController {
 	 */
 	public function index()
 	{
-		$band = band::all();
-		return View::make('band.index', compact('band'));
+		// grabbing db tables to be displayed
+		$band = DB::table('band_members')->orderBy('last_name', 'asc')->get();
+		//making view and passing in vars
+		return View::make('band.index', compact('band', 'news'));
 	}
 
 	/**

@@ -1,18 +1,4 @@
-$( document ).ready(function() {         
-
-	
-
-	// var
-	// 	mainNavbar = $('#topNav'),
-	// 	homeNavbar = $('#home-nav-bar'),
-	// 	navPos = homeNavbar.offset().top,
-	// 	topOfWindow = $(window).scrollTop();
-	// ;
-	
-	// if ( navpos = topOfWindow ){
-	// 	homeNavbar.hide();
-	// 	mainNavbar.show();
-	// }
+$( document ).ready(function() {  
 
 	//set for none scroll
 	$('#nav').localScroll(800);

@@ -9,127 +9,73 @@
 {{-- Content --}}
 @section('content')
 
+	<section id="band-wrapper">
+		
+		@foreach($band as $member)
 
-@foreach($band as $member)
-	
-	<section style="padding-top:0;">
-		<div id="{{ $member->first_name }}" class="band-list parallax" data-speed="0.1">
-			<div id="{{ $member->first_name }}-cutout" class="band-list parallax" data-speed="0.5">
-				<div class="container">
-			   		<div class="row">
-						<div class="col-md-6">
-						  	<h2>{{ $member->first_name }} {{ $member->last_name }}</h2>
-						  	<p>{{ $member->bio }}</p>
-						  	{{ $member->avatar }}
-						</div>
-					  	<div class="col-md-6">
-					  	</div>
-				 	</div>
-				</div>
-			</div>   	
-		</div>
-	</section>
+			<article id="{{ $member->first_name }}" class="band-list parallax" data-speed="0.1">
+				<div class="top-parallax parallax" data-speed="0.5">
+					<div class="container">
+				   		<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-6">
+							  	@if ($member->first_name || $member->last_name)
+							  		<h2>{{ $member->first_name }} {{ $member->last_name }}</h2>
+							  	@endif
+							  	@if ($member->instrument)
+							  		<h3>{{ $member->instrument }}</h3>
+							  	@endif
+							  	@if ($member->bio)
+								  	<p>{{ $member->bio }}</p>
+								@endif
+								@if ($member->email || $member->facebook_url || $member->twitter_handel)
+									<ul class="sn-list clearfix">
+										@if ($member->email)
+						                	
+						                	<li>
+						                    	<a href="mailto:{{ $member->email }}" target="_blank" title="" class="sn-links email">
+						                        	<span class="fa-stack fa-lg fa-1x">
+													  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+													  <i class="fa fa-envelope-o fa-stack-1x"></i>
+													</span>
+												</a>
+						                    </li>
 
-@endforeach
+					                    @endif
+								  		@if ($member->facebook_url)
+						                    
+						                    <li>
+						                    	<a href="{{ $member->facebook_url }}" target="_blank" title="" class="sn-links facebook">
+						                        	<span class="fa-stack fa-lg fa-1x">
+													  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+													  <i class="fa fa-facebook fa-stack-1x"></i>
+													</span>
+												</a>
+						                    </li>
 
-
-<!-- Lindsay #1 -->
-<section style="padding-top:0;">
-	<div id="lindsay" class="band-list parallax" data-speed="0.1">
-		<div id="lindsay-cutout" class="band-list parallax" data-speed="0.5">
-			<div class="container">
-		   		<div class="row">
-					<div class="col-md-6">
-					  	<h2>Heading For Things</h2>
-					  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
-			Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
+					                    @endif
+								  		@if ($member->twitter_handel)
+						                    
+						                    <li>
+						                        <a href="{{ $member->twitter_handel }}" target="_blank" title="" class="sn-links twitter">
+						                        	<span class="fa-stack fa-lg fa-1x">
+													  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+													  <i class="fa fa-twitter fa-stack-1x"></i>
+													</span>
+												</a>
+						                    </li>
+						                    
+					                    @endif
+					                </ul>
+				                @endif
+							</div>
+						  	<div class="col-xs-12 col-sm-6 col-md-6"></div>
+					 	</div>
 					</div>
-				  	<div class="col-md-6">
-				  	</div>
-			 	</div>
-			</div>
-		</div>   	
-	</div>
-</section>
-<!-- Willy #1 -->
-<section id="willy" class="band-list parallax" data-speed="0.1">
-   <article>
-   	<div class="container">
-   		<div class="row">
-		  <div class="col-md-6">
-		  </div>
-		  <div class="col-md-6">
-		  	<h2>Heading For Things</h2>
-		  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
-Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
-		  </div>
-	 	 </div>
-	 </div>
-  </article>
-</section>
-<!-- Christian #1 -->
-<section id="christian" class="band-list parallax" data-speed="0.4">
-   <article>
-   	<div class="container">
-   		<div class="row">
-		  <div class="col-md-6">
-		  	<h2>Heading For Things</h2>
-		  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
-Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
-		  </div>
-		  <div class="col-md-6">
-		  </div>
-	 	 </div>
-	 </div>
-  </article>
-</section>
-  <!-- Tyler #1 -->
-<section id="tyler" class="band-list parallax" data-speed="0.1">
-   <article>
-   	<div class="container">
-   		<div class="row">
-		  <div class="col-md-6">
-		  </div>
-		  <div class="col-md-6">
-		  	<h2>Heading For Things</h2>
-		  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
-Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
-		  </div>
-	 	 </div>
-	 </div>
-  </article>
- </section>
- <!-- Bird Dog #1 -->
-<section id="birddog" class="band-list parallax" data-speed="0.4">
-   <article>
-   	<div class="container">
-   		<div class="row">
-		  <div class="col-md-6">
-		  	<h2>Heading For Things</h2>
-		  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
-Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
-		  </div>
-		  <div class="col-md-6">
-		  </div>
-	 	 </div>
-	 </div>
-  </article>
-</section>
-  <!-- Eagle #1 -->
-<section id="eagle" class="band-list parallax" data-speed="0.1">
-   <article>
-   	<div class="container">
-   		<div class="row">
-		  <div class="col-md-6">
-		  	<h2>Heading For Things</h2>
-		  	<p>According to the specification for Custom Data Attributes, any attribute that starts with data- will be treated as a storage area for private data. Additionally, this won’t affect the layout or presentation.
-Since all we need to do is control the speed of the background images, we’ll use data-type="background" and data-speed="10" as key attributes to specify the necessary parameters.</p>
-		  </div>
-		  <div class="col-md-6">
-		  </div>
-	 	 </div>
-	 </div>
-  </article>
-</section>
+				</div>   	
+			</article>
+
+		@endforeach
+
+	</section>
 
 @stop

@@ -13,7 +13,7 @@
 
 		<!-- Mobile Specific Metas
 		================================================== -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- CSS
 		================================================== -->
@@ -42,62 +42,64 @@
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
 		<!-- Navbar -->
-		<div id="topNav" class="navbar navbar-default navbar-fixed-top" style="display:none;">
-			 <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav left-nav">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		  	<div class="container">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      	<ul class="nav navbar-nav">
 						<li {{ (Request::is('/') ? ' class="active"' : '') }}><a href="{{{ URL::to('') }}}">Home</a></li>
-						<li {{ (Request::is('/news') ? ' class="active"' : '') }}><a href="{{{ URL::to('/news') }}}">Shows</a></li>
+						<li {{ (Request::is('/news') ? ' class="active"' : '') }}><a href="{{{ URL::to('/shows') }}}">Shows</a></li>
 						<li {{ (Request::is('/band') ? ' class="active"' : '') }}><a href="{{{ URL::to('/band') }}}">Band</a></li>
 						<li {{ (Request::is('/photos') ? ' class="active"' : '') }}><a href="{{{ URL::to('/photos') }}}">Photos</a></li>
 						<li {{ (Request::is('/blog') ? ' class="active"' : '') }}><a href="{{{ URL::to('/blog') }}}">Blog</a></li>
 					</ul>
 
-                    <ul class="nav navbar-nav pull-right sn-list">
-                    <li>
-                        	<a href="{{{ URL::to('/contact-us') }}}" target="_blank" title="" class="sn-links email">
+	                <ul class="nav navbar-nav pull-right sn-list">
+	                	<li>
+	                    	<a href="{{{ URL::to('/contact-us') }}}" target="_blank" title="" class="sn-links email">
 	                        	<span class="fa-stack fa-lg fa-1x">
 								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
 								  <i class="fa fa-envelope-o fa-stack-1x"></i>
 								</span>
 							</a>
-                        </li>
-                        <li>
-                        	<a href="https://www.facebook.com/TheRecoveryAct" target="_blank" title="" class="sn-links facebook">
+	                    </li>
+	                    <li>
+	                    	<a href="https://www.facebook.com/TheRecoveryAct" target="_blank" title="" class="sn-links facebook">
 	                        	<span class="fa-stack fa-lg fa-1x">
 								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
 								  <i class="fa fa-facebook fa-stack-1x"></i>
 								</span>
 							</a>
-                        </li>
-                        <li>
+	                    </li>
+	                    <li>
 	                        <a href="#" target="_blank" title="" class="sn-links twitter">
 	                        	<span class="fa-stack fa-lg fa-1x">
 								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
 								  <i class="fa fa-twitter fa-stack-1x"></i>
 								</span>
 							</a>
-                        </li>
-                    </ul>
-					<!-- ./ nav-collapse -->
-				</div>
-				
-	<div id="circleLeaf">
-		<span class="fa-stack fa-lg fa-5x">
-		  <i class="fa fa-circle fa-stack-2x "></i>
-		  <i class="fa fa-sun-o fa-stack-1x fa-inverse"></i>
-		</span>
-	</div> 
-			</div>
-		</div>
+	                    </li>
+	                </ul>
+	                <div id="circleLeaf">
+						<span class="fa-stack fa-lg fa-5x">
+						  <i class="fa fa-circle fa-stack-2x "></i>
+						  <i class="fa fa-sun-o fa-stack-1x fa-inverse"></i>
+						</span>
+					</div> 
+	            </div><!-- /.navbar-collapse -->
+ 			</div><!-- /.container-fluid -->
+		</nav>
 		<!-- ./ navbar -->
 
 		<!-- Container -->

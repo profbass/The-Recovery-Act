@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends \BaseController {
+class ShowsController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,11 +9,10 @@ class HomeController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
-		$news = DB::table('news')->take(2)->get();
-		$shows = DB::table('shows')->take(2)->get();
-		$blog = DB::table('posts')->orderBy('created_at', 'DESC')->take(2)->get();
-		return View::make('site/home', compact('news', 'blog', 'shows'));
+		// grabbing db tables to be displayed
+		$shows = DB::table('shows')->get();
+		//making view and passing in vars
+		return View::make('shows.index', compact('shows'));
 	}
 
 	/**

@@ -112,7 +112,10 @@ Route::controller('user', 'UserController');
 Route::resource('news', 'NewsController');
 
 //Band Bio Controller
-Route::resource('band','BandController');
+Route::resource('band','BandMembersController');
+
+//Band Bio Controller
+Route::resource('shows','ShowsController');
 
 //Photos Controller
 Route::resource('photos','PhotosController');
