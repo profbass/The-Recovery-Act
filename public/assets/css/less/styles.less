@@ -11,13 +11,16 @@ body{
 }
 
 // Custom google fonts
-h1, h2{
-    font-family: 'Headland One', serif;
-    //font-family: 'Open Sans', sans-serif;
+h1{
+	font-family: 'Gloria Hallelujah', cursive;
+}
+h2{
+    //font-family: 'Headland One', serif;
+    font-family: 'Open Sans', sans-serif;
 }
 h3, h4{
-    font-family: 'Rock Salt', serif;
-    //font-family: 'Open Sans', sans-serif;
+    //font-family: 'Rock Salt', serif;
+    font-family: 'Open Sans', sans-serif;
 }
 p, li, .alert, .btn, input, textarea, nav{
     font-family: 'Open Sans', sans-serif;
@@ -37,6 +40,19 @@ nav{
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
 	background: transparent !important; 
+}
+form{
+	.form-group{
+		input[type="text"]{
+			background: rgba(0,0,0,0.4);
+			color: #f2f2f2;
+			border:none;
+		}
+		.input-group-addon{
+			background: rgba(0,0,0,0.4);
+			border:none;
+		}
+	}
 }
 
 //Social Network Icon Styles
@@ -95,12 +111,20 @@ ul.sn-list {
 	padding: 0;
 }
 #signup { 
-	background: url(/assets/img/bg-stardust.png) 50% 0 fixed;
-	height: 300px;
-	padding: 100px 0 0 0;
-	color: #f2f2f2;
+	background: url(/assets/img/bg-felt.png) 50% 0 fixed;
+	background-size: 10% auto;
+	height: 300px; 
+	color: #eee;
+	#guitar{
+		background: url(/assets/img/pic-electric-guitar.png) -175% 0 no-repeat fixed;
+		background-size: 800px auto;
+		height: 400px;
+		width: 100%;
+		left:0;
+		z-index: 200;
+	}
 }
-#about { 
+#news { 
 	background: url(/assets/img/bg-wood.png) 50% 0 fixed;
 	background-size: 30% auto;
 	height: 400px;
@@ -121,8 +145,43 @@ ul.sn-list {
 	background: url(/assets/img/bg-concert.jpg) 50% 0 no-repeat fixed;
 	background-size: 130% auto;
 	color: white;
-	height: 450px;
-	padding: 0 0 0 0;
+	height: 400px;
+	padding: 0 0 0 0 !important;
+	h4{
+		float:left;
+		padding: 0 10px 0 0;
+		margin: 0;
+		text-align: center;
+		.hour{
+			display: block;
+			font-size: 2.4em;
+			border-bottom: 1px solid #ccc;
+			color: #d9534f;
+			font-weight:800;
+		}
+		.month{
+			padding: 5px 0 0 0;
+			display: block;
+			font-size: 1.2em;
+			color: #a1a1a1;
+			font-weight:400;
+		}
+	}
+	.time{
+		color: #b7b7b7;
+		font-style: italic;
+	}
+	h2{
+		padding: 0 0 0 0;
+		margin: 0;
+		font-size: 1.7em;
+		line-height: 140%;
+		.clearfix();
+	}
+	p{
+		font-weight:300;
+		line-height: 190%;
+	}
 }
 
 /* Introduction */

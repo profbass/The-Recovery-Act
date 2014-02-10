@@ -17,7 +17,14 @@
 				<div class="top-parallax parallax" data-speed="0.5">
 					<div class="container">
 				   		<div class="row">
-							<div class="col-xs-12 col-sm-6 col-md-6">
+
+				   			@if ($member->first_name == "Willy" || $member->first_name == "Tyler")
+							  	<div class="col-xs-12 col-sm-6 col-md-6"></div>
+							  	<div class="col-xs-12 col-sm-6 col-md-6">
+				   			@else 
+				   				<div class="col-xs-12 col-sm-6 col-md-6">
+				   			@endif
+
 							  	@if ($member->first_name || $member->last_name)
 							  		<h2>{{ $member->first_name }} {{ $member->last_name }}</h2>
 							  	@endif
@@ -67,8 +74,14 @@
 					                    @endif
 					                </ul>
 				                @endif
-							</div>
-						  	<div class="col-xs-12 col-sm-6 col-md-6"></div>
+
+							@if ($member->first_name == "Willy" || $member->first_name == "Tyler")
+							  	<div class="col-xs-12 col-sm-6 col-md-6">
+				   			@else 
+				   				</div>
+							  	<div class="col-xs-12 col-sm-6 col-md-6"></div>
+				   			@endif
+
 					 	</div>
 					</div>
 				</div>   	
