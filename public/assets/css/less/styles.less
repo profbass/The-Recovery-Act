@@ -2,21 +2,15 @@ body{
 	background: url(/assets/img/bg-paper.jpg); 
     //color: #f5f5f5;
 }
-.btn, .form-control, .input-group-addon{
-	border-radius: 0;
-}
 
-.btn-primary{
-	background-image: url(/assets/img/bg-texture.png); 
-}
 
 // Custom google fonts
-h1{
-	font-family: 'Gloria Hallelujah', cursive;
-}
-h2{
+// h1{
+// 	font-family: 'Gloria Hallelujah', cursive;
+// }
+h1, h2{
     //font-family: 'Headland One', serif;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Gilda Display', serif;
 }
 h3, h4{
     //font-family: 'Rock Salt', serif;
@@ -26,43 +20,110 @@ p, li, .alert, .btn, input, textarea, nav{
     font-family: 'Open Sans', sans-serif;
 }
 
-nav{
-	background: url(/assets/img/bg-paper.jpg); 
+
+// Button styles
+.btn-primary{
+	background-color: #428bca;
+	-webkit-box-shadow: 0px 5px 0px 0px #346fa1;
+	-moz-box-shadow: 0px 5px 0px 0px #346fa1;
+	box-shadow: 0px 5px 0px 0px #346fa1;
+	i{
+		font-size: 1.4em;
+	}
+}
+
+
+//Top Navbar overrides
+nav.navbar{
+	background: rgba(255,109,87, 0.95); 
     width: 100%; 
-    color: #4f4f4f;
-}
- .nav a {
-	color: #333;
-	font-size: 1em;
-	font-weight: 600;
-}
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
-.navbar-default .navbar-nav > .active > a:focus {
-	background: transparent !important; 
-}
-form{
-	.form-group{
-		input[type="text"]{
-			background: rgba(0,0,0,0.4);
-			color: #f2f2f2;
-			border:none;
+    color: #f4f4f4;
+    border:none;
+	ul.nav-main{
+		//border-left: 2px solid rgba(178,148,124, 0.2);
+		li{
+			//border-right: 2px solid rgba(178,148,124, 0.2);
+			i{
+				float: left;
+				padding: 15px 10px 0 0;
+			}
+			a{
+				color: #fff;
+				font-weight:300;
+				font-size: 1.3em;
+				font-weight: 400;
+				background: transparent !important; 
+				padding: 10px 20px;
+				//border-left: 1px solid rgba(133,101,75, 0.3);
+				.title{
+					display: block;
+	    			font-family: 'Open Sans', sans-serif;
+					font-size: 0.6em;
+					font-weight: 300;
+				}
+			}
 		}
-		.input-group-addon{
-			background: rgba(0,0,0,0.4);
-			border:none;
+	}
+	ul.sn-list{
+		li{
+			a{
+				font-size: 1.1em;	
+				padding: 9px 7px;
+			}
+		}
+	}
+	.navbar-brand{
+		width: 150px;
+		padding: 0;
+		#circleLeaf{
+			position: relative;
+			.fa-circle{
+				color: rgba(247,150,40, 0.8); 
+				z-index: 1000;
+				position: relative;
+				top: -65px;
+				font-size: 150px;
+			}
+			.text1{
+				display: block;
+				color: #f2f2f2;
+		    	font-family: 'Open Sans', sans-serif;
+				font-size: 24px;
+				font-weight: 800;
+				z-index: 1001;
+				position: absolute;
+				top:3px;
+				left:35px;
+			}
+			.text2{
+				display: block;
+				color: #f2f2f2;
+				font-size: 30px;
+	    		font-family: 'Gilda Display', serif;
+				z-index: 1001;
+				position: absolute;
+				top:25px;
+				left:0;
+			}
+			.text3{
+				display: block;
+				color: #f2f2f2;
+				font-size: 1.2em;
+				z-index: 1001;
+				position: absolute;
+				top:45px;
+				left:50px;
+			}
 		}
 	}
 }
 
 //Social Network Icon Styles
-
 ul.sn-list {
 	margin: 0;
 	padding: 0;
 	li {
 		a.sn-links{
-			padding: 7px 0 0 0;
 			color: #fff;
 			.fa-stack{
 				opacity:0.8;
@@ -101,6 +162,27 @@ ul.sn-list {
 	}
 }
 
+// Form overrides
+form{
+	.form-group{
+		input[type="text"]{
+			background: rgba(255,255,255,0.7);
+			color: #333;
+			border:none;
+			padding: 12px 35px;
+			height: auto;
+			border-radius: 0;
+		}
+		.input-group-addon{
+			background: rgba(255,255,255,0.7);
+			border:none;
+			font-size: 1.2em;
+			border-radius: 0;
+			color:#333;
+		}
+	}
+}
+
 // Parallax
 #home { 
 	background: url(/assets/img/bg-tra1.jpg) 50% 0 no-repeat fixed;
@@ -110,11 +192,14 @@ ul.sn-list {
 	margin: 0 auto;
 	padding: 0;
 }
-#signup { 
+#news { 
 	background: url(/assets/img/bg-felt.png) 50% 0 fixed;
 	background-size: 10% auto;
-	height: 300px; 
-	color: #eee;
+	height: 400px;
+	width: 100%;
+	margin: 0 auto;
+	z-index: 100;
+	padding-top: 0 !important;
 	#guitar{
 		background: url(/assets/img/pic-electric-guitar.png) -175% 0 no-repeat fixed;
 		background-size: 800px auto;
@@ -124,14 +209,12 @@ ul.sn-list {
 		z-index: 200;
 	}
 }
-#news { 
+#signup { 
 	background: url(/assets/img/bg-wood.png) 50% 0 fixed;
 	background-size: 30% auto;
-	height: 400px;
-	width: 100%;
-	margin: 0 auto;
-	z-index: 100;
-	padding-top: 0 !important;
+	height: 300px; 
+	color: #222;
+	text-align: center;
 	#mic{
 		background: url(/assets/img/pic-microphone.png) 175% 0 no-repeat fixed;
 		background-size: 600px auto;
@@ -139,6 +222,16 @@ ul.sn-list {
 		width: 100%;
 		right:0;
 		z-index: 200;
+	}
+	p{
+		font-size:19px;
+		font-weight: 300;
+		span{
+			font-weight: 600;
+		}
+	}
+	h2{
+		32px;
 	}
 }
 #shows { 
@@ -160,7 +253,7 @@ ul.sn-list {
 			font-weight:800;
 		}
 		.month{
-			padding: 5px 0 0 0;
+			padding: 2px 0 0 0;
 			display: block;
 			font-size: 1.2em;
 			color: #a1a1a1;
@@ -174,8 +267,8 @@ ul.sn-list {
 	h2{
 		padding: 0 0 0 0;
 		margin: 0;
-		font-size: 1.7em;
-		line-height: 140%;
+		font-size: 2em;
+		line-height: 145%;
 		.clearfix();
 	}
 	p{
@@ -183,31 +276,10 @@ ul.sn-list {
 		line-height: 190%;
 	}
 }
-
-/* Introduction */
-
-#home logo { 
-	height: 458px; 
-	position: absolute; 
-	text-indent: -9999px; 
-	top: 291px; 
-	width: 100%; 
-}
-#circleLeaf{
-	position: absolute;
-	top:-15px;
-	left:45%;
-	z-index: 1000;
-}
-#circleLeaf .fa-circle:before{
-}
-#circleLeaf .fa-pagelines{
-	color: #f9f8f6;
-}
 #footer{
     // box-shadow: 0 0 50px rgba(0,0,0,0.8);
-	background: #222;
-	color: #666666;
+	background: url(/assets/img/bg-dot.png) #414a50;
+	color: #fff;
 	height: 300px;
 }
 

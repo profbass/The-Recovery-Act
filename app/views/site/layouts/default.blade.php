@@ -42,6 +42,7 @@
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
 		<!-- Navbar -->
+
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		  	<div class="container">
 			    <!-- Brand and toggle get grouped for better mobile display -->
@@ -52,17 +53,38 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			      </button>
-			      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+			     <!-- <a class="navbar-brand" href="#">
+	                <div id="circleLeaf">
+					  	 <i class="fa fa-circle fa-stack-5x"></i> 
+						<span class="text1">THE</span>
+						<span class="text2">Recovery</span>
+						<span class="text3">Act</span>
+					</div> 
+			     </a>-->
 			    </div>
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      	<ul class="nav navbar-nav">
-						<li {{ (Request::is('/') ? ' class="active"' : '') }}><a href="{{{ URL::to('') }}}">Home</a></li>
-						<li {{ (Request::is('/news') ? ' class="active"' : '') }}><a href="{{{ URL::to('/shows') }}}">Shows</a></li>
-						<li {{ (Request::is('/band') ? ' class="active"' : '') }}><a href="{{{ URL::to('/band') }}}">Band</a></li>
-						<li {{ (Request::is('/photos') ? ' class="active"' : '') }}><a href="{{{ URL::to('/photos') }}}">Photos</a></li>
-						<li {{ (Request::is('/blog') ? ' class="active"' : '') }}><a href="{{{ URL::to('/blog') }}}">Blog</a></li>
+			      	<ul class="nav navbar-nav nav-main">
+						<li {{ (Request::is('/news') ? ' class="active"' : '') }}>
+							<i class="fa fa-music fa-stack-5x"></i> 
+							<a href="{{{ URL::to('/shows') }}}">
+								live
+								<span class="title">COME SEE US PLAY</span>
+							</a>
+						</li>
+						<li {{ (Request::is('/band') ? ' class="active"' : '') }}>
+							<a href="{{{ URL::to('/band') }}}">
+								the act
+								<span class="title">ABOUT THE BAND</span>
+							</a>
+						</li>
+						<li {{ (Request::is('/blog') ? ' class="active"' : '') }}>
+								<a href="{{{ URL::to('/blog') }}}">
+								news journal
+								<span class="title">NEWS AND THOUGHTS</span>
+							</a>
+						</li>
 					</ul>
 
 	                <ul class="nav navbar-nav pull-right sn-list">
@@ -91,15 +113,10 @@
 							</a>
 	                    </li>
 	                </ul>
-	                <div id="circleLeaf">
-						<span class="fa-stack fa-lg fa-5x">
-						  <i class="fa fa-circle fa-stack-2x "></i>
-						  <i class="fa fa-sun-o fa-stack-1x fa-inverse"></i>
-						</span>
-					</div> 
 	            </div><!-- /.navbar-collapse -->
  			</div><!-- /.container-fluid -->
 		</nav>
+		
 		<!-- ./ navbar -->
 
 		<!-- Container -->
