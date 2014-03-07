@@ -43,7 +43,7 @@
 		<div id="wrap">
 		<!-- Navbar -->
 
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<nav class="navbar navbar-fixed-top" role="navigation">
 		  	<div class="container">
 			    <!-- Brand and toggle get grouped for better mobile display -->
 			    <div class="navbar-header">
@@ -65,7 +65,7 @@
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      	<ul class="nav navbar-nav nav-main">
+			      	<ul class="nav navbar-nav nav-main pull-right">
 						<li {{ (Request::is('/news') ? ' class="active"' : '') }}>
 							<i class="fa fa-music fa-stack-5x"></i> 
 							<a href="{{{ URL::to('/shows') }}}">
@@ -87,7 +87,7 @@
 						</li>
 					</ul>
 
-	                <ul class="nav navbar-nav pull-right sn-list">
+	                <!-- <ul class="nav navbar-nav pull-right sn-list">
 	                	<li>
 	                    	<a href="{{{ URL::to('/contact-us') }}}" target="_blank" title="" class="sn-links email">
 	                        	<span class="fa-stack fa-lg fa-1x">
@@ -112,7 +112,7 @@
 								</span>
 							</a>
 	                    </li>
-	                </ul>
+	                </ul> -->
 	            </div><!-- /.navbar-collapse -->
  			</div><!-- /.container-fluid -->
 		</nav>

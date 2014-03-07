@@ -35,7 +35,11 @@ p, li, .alert, .btn, input, textarea, nav{
 
 //Top Navbar overrides
 nav.navbar{
-	background: rgba(255,109,87, 0.95); 
+	//background: rgba(255,109,87, 0.95); 
+    background-image: -webkit-gradient(
+  linear, left top, left bottom, from(rgba(0,0,0,0.8)),
+  to(rgba(0,0,0,0))
+);
     width: 100%; 
     color: #f4f4f4;
     border:none;
@@ -193,13 +197,14 @@ form{
 	padding: 0;
 }
 #news { 
-	background: url(/assets/img/bg-felt.png) 50% 0 fixed;
+	//background: url(/assets/img/bg-felt.png) 50% 0 fixed;
 	background-size: 10% auto;
-	height: 400px;
+	//height: 400px;
 	width: 100%;
 	margin: 0 auto;
 	z-index: 100;
 	padding-top: 0 !important;
+	/*
 	#guitar{
 		background: url(/assets/img/pic-electric-guitar.png) -175% 0 no-repeat fixed;
 		background-size: 800px auto;
@@ -208,6 +213,7 @@ form{
 		left:0;
 		z-index: 200;
 	}
+	*/
 }
 #signup { 
 	background: url(/assets/img/bg-wood.png) 50% 0 fixed;
@@ -235,11 +241,13 @@ form{
 	}
 }
 #shows { 
-	background: url(/assets/img/bg-concert.jpg) 50% 0 no-repeat fixed;
-	background-size: 130% auto;
-	color: white;
-	height: 400px;
+	//background: url(/assets/img/bg-concert.jpg) 50% 0 no-repeat fixed;
+	//background-size: 130% auto;
+	//color: white;
 	padding: 0 0 0 0 !important;
+	h1{
+		text-align: center;
+	}
 	h4{
 		float:left;
 		padding: 0 10px 0 0;
@@ -247,7 +255,7 @@ form{
 		text-align: center;
 		.hour{
 			display: block;
-			font-size: 2.4em;
+			font-size: 2.8em;
 			border-bottom: 1px solid #ccc;
 			color: #d9534f;
 			font-weight:800;
@@ -255,7 +263,7 @@ form{
 		.month{
 			padding: 2px 0 0 0;
 			display: block;
-			font-size: 1.2em;
+			font-size: 1.7em;
 			color: #a1a1a1;
 			font-weight:400;
 		}
@@ -267,7 +275,7 @@ form{
 	h2{
 		padding: 0 0 0 0;
 		margin: 0;
-		font-size: 2em;
+		font-size: 1.7em;
 		line-height: 145%;
 		.clearfix();
 	}
@@ -292,10 +300,10 @@ section#band-wrapper{
 	article#Lindsay { 
 		background: url(/assets/img/pic-band-lindsay.jpg) 50% 0 fixed;
 		background-size: 100% auto;
-		.top-parallax{
-			background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
-			background-size: 100% auto;
-		}
+		// .top-parallax{
+		// 	background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+		// 	background-size: 100% auto;
+		// }
 	}
 	article#Eagle { 
 		background: url(/assets/img/pic-band-eagle.jpg) 50% 0 fixed;
@@ -333,7 +341,7 @@ section#band-wrapper{
 	}
 	article.band-list{ 
 		padding-top: 0 !important;
-		color: #333;
+		color: white;
 		z-index: 1000;
 		width: 100%;
 		margin: 0;
@@ -344,13 +352,23 @@ section#band-wrapper{
 			margin: 0;
 			.container{
 				padding-top:100px;
+					text-align: center;
+				h2{
+					font-size: 3em;
+				}
 				h3{
-					color: #d9534f;
+					margin-top: 5px;
+					font-weight:300;
+				}
+				p{
+					text-align: left;
+					line-height: 200%;
+					font-weight:300;
 				}
 				.sn-list{
 					list-style: none;
 					li{
-						float: left;
+						display: inline-block;
 						margin-right:8px;
 					}
 				}
@@ -358,8 +376,25 @@ section#band-wrapper{
 		}
 	}
 }
-
-
+.dec-border {
+	height: 20px;
+}
+.dec-border.top{
+	background: url(/assets/img/border-top.png) center;
+}
+.dec-border.bottom{
+	background: url(/assets/img/border-bottom.png) center;
+}
+.dec-border {
+	height: 20px;
+	opacity: 0.3;
+}
+.dec-border.large-top{
+	background: url(/assets/img/border-top-lg.png) center;
+}
+.dec-border.large-bottom{
+	background: url(/assets/img/border-bottom-lg.png) center;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
