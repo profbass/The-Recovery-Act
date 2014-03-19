@@ -139,7 +139,68 @@
 
 	    <div id="footer">
 	      <div class="container">
-	        <p class="muted credit">&copy; The Recovery Act 2013</p>
+	        <div class="row-fluid">
+				<div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 col-mini">
+					<h5>About</h5>
+					<p>
+					  Vanamco develops software and hardware for the web. 
+					  <br>
+					  For more information visit: <a href="http://www.vanamco.com?utm_source=devicelabAbout" target="blank"> vanamco.com</a>
+					  <br>
+					  <br>
+					</p>
+					<p>Images: <a href="http://www.apix.ch/portfolio/?utm_source=devicelabSite" target="blank">APix Fotografie</a> 
+					</p>
+
+					<p role="navigation">
+					  
+					  <a href="/pages/terms-and-conditions" title="Terms and conditions">Terms and conditions</a>
+					  
+					  
+					</p>
+
+				</div>
+				<div class="col-lg-3 col-sm-4 col-xs-4 col-mini">
+					<h5>Contact Us</h5>
+					<address>
+					  Vanamco AG<br>
+					  Ottostrasse 5<br>
+					  8005 Zurich<br>
+					  Switzerland<br>
+					  <a href="">Feedback &amp; Support</a>
+					</address>
+				</div>
+				<div class="col-lg-4 col-sm-4 col-xs-4 col-mini">
+					<h5>Connect</h5>
+					<ul class="sn-list clearfix">				                	
+						<li class="pull-left">
+							<a href="mailto:profbass@gmail.com
+							" target="_blank" title="" class="sn-links email">
+								<span class="fa-stack fa-lg fa-1x">
+								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+								  <i class="fa fa-envelope-o fa-stack-1x"></i>
+								</span>
+							</a>
+						</li>				                	
+						<li class="pull-left">
+							<a href="tyler.olmsted.1" target="_blank" title="" class="sn-links facebook">
+								<span class="fa-stack fa-lg fa-1x">
+								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+								  <i class="fa fa-facebook fa-stack-1x"></i>
+								</span>
+							</a>
+						</li>				                	
+						<li class="pull-left">
+							<a href="@profbass" target="_blank" title="" class="sn-links twitter">
+								<span class="fa-stack fa-lg fa-1x">
+								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+								  <i class="fa fa-twitter fa-stack-1x"></i>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 	      </div>
 	    </div>
 

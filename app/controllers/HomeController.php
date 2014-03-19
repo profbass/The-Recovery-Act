@@ -11,8 +11,8 @@ class HomeController extends \BaseController {
 	{
 		//
 		$news = DB::table('news')->take(2)->get();
-		$shows = DB::table('shows')->take(2)->get();
-		$blog = DB::table('posts')->orderBy('created_at', 'DESC')->take(2)->get();
+		$shows = DB::table('shows')->take(3)->get();
+		$blog = DB::table('posts')->orderBy('created_at', 'DESC')->take(3)->get();
 		return View::make('site/home', compact('news', 'blog', 'shows'));
 	}
 

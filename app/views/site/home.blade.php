@@ -25,33 +25,69 @@
 	   				<h1>Upcoming Shows</h1>
 	   				<div class="dec-border large-top"></div>
 	   				<p>&nbsp;</p>
+	   				<p>&nbsp;</p>
 	   			</div>
 	   		</div>
 	   		<div class="row">
 
 				@foreach($shows as $show)
 
-			  		<div class="col-md-6">
+			  		<div class="col-md-4">
 			  			<div class="row">
-			  				<div class="col-md-2">
-					  			<h4>
-					  				<span class="hour">{{ date("d",strtotime($show->date)) }}</span>
-					  				<span class="month">{{ date("M",strtotime($show->date)) }}</span>
-					  			</h4>
+			  				<div class="col-md-3 col-sm-12 col-xm-12">
+					  			<div class="date-wrapper">
+						  			<div>
+							  			<h4>
+							  				<span class="hour">{{ date("d",strtotime($show->date)) }}</span>
+							  				<span class="month font-serif">{{ date("M",strtotime($show->date)) }}</span>
+							  			</h4>
+						  			</div>
+					  			</div>
 					  		</div>
-					  		<div class="col-md-10">
-					  			<h2>{{ $show->heading }}</h2>
-					  			<p class="time"><i class="fa fa-music fa-1x"></i> @ {{ date("g:ha",strtotime($show->date)) }}</p>
-					  			<!-- <p>{{ String::tidy(Str::limit($show->content, 300)) }}</p> -->
+					  		<div class="col-md-9 col-sm-12 col-xm-12">
+					  			@if ($show->venue)
+					  				<h2>{{ $show->venue }}</h2>
+					  			@endif
 					  			<p>
-					  				<a class="btn btn-danger btn-sm" href="{{ $show->web_link }}" target="_blank">FIND OUT MORE <i class="fa fa-chevron-right fa-1x"></i></a>
+					  				@if ($show->address)
+						  				{{ $show->address }}
+						  				<br>
+						  			@endif
+					  				<span class="time">show starts at {{ date("g:ha",strtotime($show->date)) }}</span>
 					  			</p>
+					  			<ul class="sn-list">
+									@if ($show->web_link)
+							  			<li class="pull-left">
+							  				<a class="btn btn-default btn-sm" href="{{ $show->web_link }}" target="_blank">FIND OUT MORE <i class="fa fa-chevron-right fa-1x"></i></a>
+							  			</li>
+							  		@endif
+					  				@if ($show->facebook_link)
+							  			<!-- <li class="pull-left">
+							  				<a href="{{ $show->facebook_link }}" target="_blank" title="" class="sn-links facebook">
+												<span class="fa-stack fa-lg fa-1x">
+												  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+												  <i class="fa fa-facebook fa-stack-1x"></i>
+												</span>
+											</a>
+										</li> -->
+									@endif
+					  			</ul>
 					  		</div>
 			  			</div>
 			  		</div>
 
 			  	@endforeach
 
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+	   				<div class="dec-border large-bottom"></div>
+					<p>&nbsp;</p>
+					<p style="text-align:center;"> <a href="">CHECK OUT ALL OF OUR UPCOMING SHOWS <i class="fa fa-chevron-circle-right"></i></a>
+					</p>
+				</div>
 			</div>
 		</div>
 	</article>
@@ -71,13 +107,17 @@
 
 				@foreach($blog as $posts)
 
-			  		<div class="col-md-5">
-			  			<h2>{{ $posts->title }}</h2>
-			  			<p>{{ String::tidy(Str::limit($posts->content, 200)) }}</p>
+			  		<div class="col-md-4">
+			  			<div class="box">
+				  			<img src="assets/img/bg-concert.jpg" width="100%" height="200" />
+				  			<div style="padding:30px">
+					  			<h2>{{ $posts->title }}</h2>
+					  			<p>{{ String::tidy(Str::limit($posts->content, 200)) }}</p>
+					  		</div>
+				  		</div>
 			  		</div>
 
 			  	@endforeach
-			  	<div class="col-md-2"></div>
 
 		 	</div>
 		</div>
