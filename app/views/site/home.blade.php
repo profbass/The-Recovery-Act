@@ -10,19 +10,60 @@
 @section('content')
 
 {{-- Home Band Image --}}
-<section id="home" class="parallax" data-speed="0.1">
-   <article></article>
+<section id="home">
+   <article class="parallax" data-speed="0.1"></article>
 </section>
 
 
+{{-- Blog Feed/News --}}
+<section id="news">
+	<!-- <div id="guitar" class="parallax" data-pos="-55%" data-speed="0.8"> -->
+	   	<div class="container">
+	   		<div class="row">
+	   			<div class="col-md-12">
+	   				<h1>{ News } <span class="font-sans-serif">here is what we've been up to</span></h1>
+	   				<p>&nbsp;</p>
+	   			</div>
+	   		</div>
+	   		<div class="row">
+
+				@foreach($blog as $posts)
+
+			  		<div class="col-md-4">
+			  			<div class="box">
+				  			<img src="assets/img/bg-concert.jpg" width="100%" height="200" />
+				  			<div style="padding:30px">
+					  			<h2>{{ $posts->title }}</h2>
+					  			<p>{{ String::tidy(Str::limit($posts->content, 200)) }}</p>
+					  		</div>
+				  		</div>
+			  		</div>
+
+			  	@endforeach
+
+		 	</div>
+		 	<div class="row">
+				<div class="col-md-12">
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+	   				<div class="dec-border large-bottom"></div>
+					<p>&nbsp;</p>
+					<p style="text-align:center;"> <a href="">SEE EVERYTHING WE HAVE GOING ON <i class="fa fa-chevron-circle-right"></i></a>
+					</p>
+				</div>
+			</div>
+		</div>
+  	</div>
+</section>
+
 
 {{-- Shows --}}
-<section id="shows" class="parallax" data-speed="0.5">
+<section id="shows">
 	<article class="animatedElement" data-animation="slideUp">
 		<div class="container">
 	   		<div class="row">
 	   			<div class="col-md-12">
-	   				<h1>Upcoming Shows</h1>
+	   				<h1>{ Upcoming Shows }</h1>
 	   				<div class="dec-border large-top"></div>
 	   				<p>&nbsp;</p>
 	   				<p>&nbsp;</p>
@@ -93,48 +134,18 @@
 	</article>
  </section>
 
-{{-- Blog Feed/News --}}
-<section id="news">
-	<!-- <div id="guitar" class="parallax" data-pos="-55%" data-speed="0.8"> -->
-	   	<div class="container">
-	   		<div class="row">
-	   			<div class="col-md-12">
-	   				<h1>News</h1>
-	   				<p>&nbsp;</p>
-	   			</div>
-	   		</div>
-	   		<div class="row">
 
-				@foreach($blog as $posts)
-
-			  		<div class="col-md-4">
-			  			<div class="box">
-				  			<img src="assets/img/bg-concert.jpg" width="100%" height="200" />
-				  			<div style="padding:30px">
-					  			<h2>{{ $posts->title }}</h2>
-					  			<p>{{ String::tidy(Str::limit($posts->content, 200)) }}</p>
-					  		</div>
-				  		</div>
-			  		</div>
-
-			  	@endforeach
-
-		 	</div>
-		</div>
-  	</div>
-</section>
 
 {{-- Signup Section --}}
 <section id="signup" class="parallax">
-	<div id="mic" class="parallax" data-pos="114%" data-speed="0.8">
+	<div id="mic" class="parallax" data-pos="114%" data-speed="0.9">
 		<div class="bg">
 		   	<div class="container">
 
 		   	<div class="row">
 	   			<div class="col-md-12">
 	   				<h2>Do You Want To Hear More?!</h2>
-	   				<p>Feel like you just can't get enough <span>The Recovery Act</span> in your life? <span>Join our Newsletter</span>!<br>
-	   				We'll make sure you keep in up to date on all the latest <span>News, Shows</span> amd More!!</p>
+	   				
 	   			</div>
 			</div>
 	   		<div class="row">
@@ -157,6 +168,8 @@
 		</div>
 	</div>
 </section>
+
+
 
 
 @stop

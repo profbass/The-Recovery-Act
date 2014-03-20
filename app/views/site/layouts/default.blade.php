@@ -42,6 +42,9 @@
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
 		<!-- Navbar -->
+		<div id="logo">
+			<div><a href="/"><img src="assets/img/logo-tra.png" /></a></div>
+		</div>
 
 		<nav class="navbar navbar-fixed-top" role="navigation">
 		  	<div class="container">
@@ -67,22 +70,23 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      	<ul class="nav navbar-nav nav-main pull-right">
 						<li {{ (Request::is('/news') ? ' class="active"' : '') }}>
-							<i class="fa fa-music fa-stack-5x"></i> 
 							<a href="{{{ URL::to('/shows') }}}">
-								live
-								<span class="title">COME SEE US PLAY</span>
+								shows
+								<span class="title">COME SEE IT LIVE</span>
 							</a>
 						</li>
+						<li style="padding-top:20px;">/</li>
 						<li {{ (Request::is('/band') ? ' class="active"' : '') }}>
 							<a href="{{{ URL::to('/band') }}}">
-								the act
-								<span class="title">ABOUT THE BAND</span>
+								the band
+								<span class="title">MEET THE ACT</span>
 							</a>
 						</li>
+						<li style="padding-top:20px;">/</li>
 						<li {{ (Request::is('/blog') ? ' class="active"' : '') }}>
 								<a href="{{{ URL::to('/blog') }}}">
-								news journal
-								<span class="title">NEWS AND THOUGHTS</span>
+								news reel
+								<span class="title">NEWS AND RANDOMNESS</span>
 							</a>
 						</li>
 					</ul>
