@@ -36,6 +36,11 @@ $( document ).ready(function() {
 
 //JS to add class for animations when  element is scrolled to
 $(window).scroll(function() {
+	 var s = $(window).scrollTop(),
+        opacityVal = (s / 200.0);
+
+    $('.blurred-image').css('opacity', opacityVal);
+
 	// var mainNavbar = $('#topNav');
 	// var sidebar = $('#home-nav-bar');
  //    $window = $(window);

@@ -11,7 +11,13 @@
 
 {{-- Home Band Image --}}
 <section id="home">
-   <article class="parallax" data-speed="0.1"></article>
+	 	<div class="parallax img-src original-image" data-speed="0.1"></div>
+    	<div class="parallax img-src blurred-image" data-speed="0.1"></div>
+		<!-- <div class="square"><div class="parallax" data-speed="0.2"></div></div>
+		<div class="square" style="position: absolute; right:0; top:0;"><div class="parallax" style="margin: -375px 0 0 -755px;-webkit-filter: grayscale(1); width:1288px;" data-speed="0.3"></div></div> -->
+		<!-- <div class="bandpic parallax">
+		<div class="parallax" data-speed="0.1" class="parallax" data-speed="0.1"></div>
+   	</div> -->
 </section>
 
 
@@ -31,7 +37,7 @@
 
 			  		<div class="col-md-4">
 			  			<div class="box">
-				  			<img src="assets/img/bg-concert.jpg" width="100%" height="200" />
+				  			<img src="assets/img/bg-concert.jpg" />
 				  			<div style="padding:30px">
 					  			<h2>{{ $posts->title }}</h2>
 					  			<p>{{ String::tidy(Str::limit($posts->content, 200)) }}</p>

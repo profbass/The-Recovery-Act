@@ -39,7 +39,7 @@ return array(
             {
                 $collection->javascript('//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js');
                 $collection->javascript('//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js');
-                //$collection->add('bootstrap/bootstrap.js');
+                $collection->add('bootstrap/bootstrap.js');
                 //$collection->requireDirectory('../../../vendor/twbs/bootstrap/js');
                 $collection->add('app.js');
                 $collection->add('parallax.js');

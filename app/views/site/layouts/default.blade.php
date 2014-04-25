@@ -42,33 +42,35 @@
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
 		<!-- Navbar -->
-		<div id="logo">
+		<!--<div id="logo">
 			<div><a href="/"><img src="assets/img/logo-tra.png" /></a></div>
-		</div>
+		</div>-->
 
 		<nav class="navbar navbar-fixed-top" role="navigation">
 		  	<div class="container">
 			    <!-- Brand and toggle get grouped for better mobile display -->
 			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			     <!-- <a class="navbar-brand" href="#">
-	                <div id="circleLeaf">
-					  	 <i class="fa fa-circle fa-stack-5x"></i> 
-						<span class="text1">THE</span>
-						<span class="text2">Recovery</span>
-						<span class="text3">Act</span>
-					</div> 
-			     </a>-->
+			      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				    </button>
+				    <a href="/" class="navbar-brand"> 
+				     	<span id="logo"><img src="assets/img/logo-tra.png" width="110" /></span>
+				    </a>
 			    </div>
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      	<ul class="nav navbar-nav nav-main pull-right">
+			      	<ul class="nav navbar-nav nav-main">
+						<li {{ (Request::is('/blog') ? ' class="active"' : '') }}>
+								<a href="{{{ URL::to('/blog') }}}">
+								news reel
+								<span class="title">NEWS AND RANDOMNESS</span>
+							</a>
+						</li>
+						<li style="padding-top:20px;">/</li>
 						<li {{ (Request::is('/news') ? ' class="active"' : '') }}>
 							<a href="{{{ URL::to('/shows') }}}">
 								shows
@@ -83,10 +85,10 @@
 							</a>
 						</li>
 						<li style="padding-top:20px;">/</li>
-						<li {{ (Request::is('/blog') ? ' class="active"' : '') }}>
-								<a href="{{{ URL::to('/blog') }}}">
-								news reel
-								<span class="title">NEWS AND RANDOMNESS</span>
+						<li {{ (Request::is('/news') ? ' class="active"' : '') }}>
+							<a href="{{{ URL::to('/shows') }}}">
+								media
+								<span class="title">MUSIC, VIDEOS AND MORE!</span>
 							</a>
 						</li>
 					</ul>
@@ -145,12 +147,11 @@
 	      <div class="container">
 	        <div class="row-fluid">
 				<div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 col-mini">
-					<h5>About</h5>
+					<h5>OUR SITE</h5>
 					<p>
-					  Vanamco develops software and hardware for the web. 
+					  Thank you for visiting us! 
 					  <br>
-					  For more information visit: <a href="http://www.vanamco.com?utm_source=devicelabAbout" target="blank"> vanamco.com</a>
-					  <br>
+					  Development and Support: <a href="http://www.tylerolmsted.com?utm_source=devicelabAbout" target="blank"> tylerolmsted.com</a>
 					  <br>
 					</p>
 					<p>Images: <a href="http://www.apix.ch/portfolio/?utm_source=devicelabSite" target="blank">APix Fotografie</a> 
@@ -167,11 +168,10 @@
 				<div class="col-lg-3 col-sm-4 col-xs-4 col-mini">
 					<h5>Contact Us</h5>
 					<address>
-					  Vanamco AG<br>
-					  Ottostrasse 5<br>
-					  8005 Zurich<br>
-					  Switzerland<br>
-					  <a href="">Feedback &amp; Support</a>
+						The Recovery Act<br>
+					  	6100 E 39th Ave # A<br>
+					  	Denver, CO 80207<br>
+					  <a href="#">Send Us An Email</a>
 					</address>
 				</div>
 				<div class="col-lg-4 col-sm-4 col-xs-4 col-mini">

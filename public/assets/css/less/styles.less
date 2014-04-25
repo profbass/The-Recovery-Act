@@ -11,6 +11,7 @@ body{
 h1, h2, .font-serif{
     //font-family: 'Headland One', serif;
     font-family: 'Gilda Display', serif;
+    color:#534442;
 }
 h3, h4, .font-sans-serif{
     //font-family: 'Rock Salt', serif;
@@ -26,10 +27,12 @@ h5{
 p, li, .alert, .btn, input, textarea, nav, address{
     font-family: 'Open Sans', sans-serif;
 }
-p{
+p, address{
 	font-weight: 300;
 }
-
+a{
+	color:#5E8A92;
+}
 // Button styles
 
 .btn{
@@ -60,20 +63,15 @@ p{
 
 //top logo
 #logo{
-	position: fixed;
-	width: 150px;
-	height: 90px;
-	z-index: 2000;
-	left: 45%;
-	div{
-		width: 150px;
-		height: 90px;
+		width: 130px;
+		height: 70px;
 		padding: 5px 0 0 10px;
+		display: block;
 		background-color: #fff;
 		-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 		-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-	}
+
 	div:before, div:after{
 		position: absolute;
 		width: 40%;
@@ -245,6 +243,7 @@ ul.sn-list {
 	}
 }
 
+
 // Form overrides
 form{
 	.form-group{
@@ -265,80 +264,165 @@ form{
 		}
 	}
 }
+
+//box with shadow
+.box{
+	position: relative;
+	width: 100%;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+.box:before, .box:after{
+	position: absolute;
+	width: 40%;
+	height: 10px;
+	content: ' ';
+	left: 12px;
+	bottom: 12px;
+	background: transparent;
+	-webkit-transform: skew(-5deg) rotate(-5deg);
+	-moz-transform: skew(-5deg) rotate(-5deg);
+	-ms-transform: skew(-5deg) rotate(-5deg);
+	-o-transform: skew(-5deg) rotate(-5deg);
+	transform: skew(-5deg) rotate(-5deg);
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	z-index: -1;
+} 
+.box:after{
+	left: auto;
+	right: 12px;
+	-webkit-transform: skew(5deg) rotate(5deg);
+	-moz-transform: skew(5deg) rotate(5deg);
+	-ms-transform: skew(5deg) rotate(5deg);
+	-o-transform: skew(5deg) rotate(5deg);
+	transform: skew(5deg) rotate(5deg);
+}
+
+
 #wrap{
 	overflow-x: hidden;
 }
 // Parallax
-#home { 
-	height: 600px;
-	width: 210%;
-	overflow: hidden;
-	-webkit-transform: translateX(10px) rotate(10deg) translateY(5px);
-    transform: translateX(10px) rotate(10deg) translateY(5px);
-	margin-left: -25px;
-	border-bottom: 20px solid rgba(70, 64, 59, 1);
-	article{
-		background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;
-		background-size: 100% auto;
-		color: white;
-		height: 600px;
-		margin: 0 0 0 -400px;
-		padding: 0;
-		margin-left: 25px;
-	    -webkit-transform: translateX(0) rotate(-10deg) translateY(0);
-     	transform: translateX(0) rotate(-10deg) translateY(0);
-    }
+// #home { 
+// 	height: 600px;
+// 	width: 100%;
+// 	//-webkit-transform: translateX(10px) rotate(10deg) translateY(5px);
+//     //transform: translateX(10px) rotate(10deg) translateY(5px);
+// 	//margin-left: -25px;
+// 	//border-bottom: 20px solid rgba(70, 64, 59, 1);
+// 	article{
+// 		background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;
+// 		background-size: cover;
+// 		-webkit-background-size: cover;
+// 		color: white;
+// 		//margin: 0 0 0 -400px;
+// 		padding: 0;
+// 		//margin-left: 25px;
+// 	    //-webkit-transform: translateX(0) rotate(-10deg) translateY(0);
+//      	//transform: translateX(0) rotate(-10deg) translateY(0);
+     	
+//     }
+// }
+
+#home {
+	// background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;
+ // 	background-size: cover;
+ // 	-webkit-background-size: cover;
+ 	overflow: hidden;
+ 	height: 0;
+ 	padding-bottom:40%;
+ 	width:100%;
+ 	position: relative;
+ 	.original-image{
+ 		background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;	
+ 	}
+ 	.blurred-image{
+ 		background: url(/assets/img/bg-tra-blur.jpg) 100% 0 no-repeat fixed;
+ 		opacity: 0;
+ 	}
+ 	.img-src{
+ 		position: absolute;
+ 		background-size: cover;
+	 	-webkit-background-size: cover;
+	 	overflow: hidden;
+	 	height: 0;
+	 	padding-bottom:40%;
+	 	width:100%;
+ 	}
+ 	.square{
+ 		width: 600px;
+ 		height: 600px;
+ 		transform: rotate(-45deg);
+ 		-webkit-transform: rotate(-45deg);
+ 		overflow: hidden;
+ 		div{
+
+	 		width: 1200px;
+	 		height: 1200px;
+	 		margin: 96px 0 0 -265px;
+			background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;
+		 	background-size: cover;
+		 	-webkit-background-size: cover;
+	 		transform: rotate(45deg);
+	 		-webkit-transform: rotate(45deg);
+ 		    //-webkit-filter: grayscale(1);
+ 		}
+
+ 	}
+	.bandpic{
+	 	width: 100%;
+	 	overflow: hidden;
+		-webkit-transform: translateX(10px) rotate(45deg) translateY(5px);
+		transform: translateX(10px) rotate(45deg) translateY(5px);
+		div{
+			background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;
+		 	background-size: cover;
+		 	-webkit-background-size: cover;
+		 	padding-bottom: 40%;
+		 	max-width: 100%;
+		 	-webkit-transform: translateX(0) rotate(-45deg) translateY(0);
+	     	transform: translateX(0) rotate(-45deg) translateY(0);
+ 	        -webkit-filter: grayscale(1);
+ 	        //-webkit-filter: blur(5px);
+ 	        //filter: hue-rotate(90deg)
+     	}
+ 	}
 }
 #news { 
 	//background: url(/assets/img/bg-floral.png) 50% 0 fixed;
 	//background-size: 10% auto;
 	//height: 400px;
 	width: 100%;
-	margin: -150px auto 0 auto;
+	//margin: -150px auto 0 auto;
 	z-index: 100;
 	padding: 0 0 50px 0 !important;
 	color: #46403B;
 	h1{
 		span{
-			color: #999;
+			//color: #999;
 			font-size: 0.5em;
 			font-weight: 300;
 		}
 	}
-	.box{
-		position: relative;
-		width: 100%;
-		background-color: #fff;
-		-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-		-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	img{
+		width:100%;
+		height: 200px;
 	}
-	.box:before, .box:after{
-		position: absolute;
-		width: 40%;
-		height: 10px;
-		content: ' ';
-		left: 12px;
-		bottom: 12px;
-		background: transparent;
-		-webkit-transform: skew(-5deg) rotate(-5deg);
-		-moz-transform: skew(-5deg) rotate(-5deg);
-		-ms-transform: skew(-5deg) rotate(-5deg);
-		-o-transform: skew(-5deg) rotate(-5deg);
-		transform: skew(-5deg) rotate(-5deg);
-		-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-		-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-		z-index: -1;
-	} 
-	.box:after{
-		left: auto;
-		right: 12px;
-		-webkit-transform: skew(5deg) rotate(5deg);
-		-moz-transform: skew(5deg) rotate(5deg);
-		-ms-transform: skew(5deg) rotate(5deg);
-		-o-transform: skew(5deg) rotate(5deg);
-		transform: skew(5deg) rotate(5deg);
+	.content-banner{
+		background: url(/assets/img/pic-band-walking.jpg) 50% 0 no-repeat fixed;
+	 	background-size: 100% auto;
+		height: 0;
+		padding-bottom:20%;
+		h1{
+			font-size:3.5em;
+			color: #fff;
+			text-shadow: 3px 1px 1px rgba(0,0,0,0.7); 
+			margin-top:25%;
+		}
 	}
 	/*
 	#guitar{
@@ -350,6 +434,9 @@ form{
 		z-index: 200;
 	}
 	*/
+}
+#news-post{
+	padding: 50px 0;
 }
 #signup { 
 	background: url(/assets/img/bg-wood.png) 50% 0 fixed;
@@ -385,6 +472,7 @@ form{
 	//background-size: 130% auto;
 	//color: white;
 	padding: 30px 0 50px 0 !important;
+	overflow: hidden;
 	h1{
 		text-align: center;
 	}
@@ -505,6 +593,8 @@ section#band-wrapper{
 					text-align: center;
 				h2{
 					font-size: 3em;
+					color: #fff;
+					text-shadow: 2px 1px 1px rgba(0,0,0,0.7); 
 				}
 				h3{
 					margin-top: 5px;
