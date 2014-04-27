@@ -40,7 +40,7 @@
 				  			<img src="assets/img/bg-concert.jpg" />
 				  			<div style="padding:30px">
 					  			<h2>{{ $posts->title }}</h2>
-					  			<p>{{ String::tidy(Str::limit($posts->content, 200)) }}</p>
+					  			<p>{{ String::tidy(Str::limit(strip_tags($posts->content, 200))) }}</p>
 					  		</div>
 				  		</div>
 			  		</div>
@@ -60,6 +60,39 @@
 			</div>
 		</div>
   	</div>
+</section>
+
+{{-- Signup Section --}}
+<section id="signup" class="parallax">
+	<div id="mic" class="parallax" data-pos="114%" data-speed="0.9">
+		<div class="bg">
+		   	<div class="container">
+
+		   	<div class="row">
+	   			<div class="col-md-12">
+	   				<h2>Do You Want To Hear More?!</h2>
+	   				
+	   			</div>
+			</div>
+	   		<div class="row">
+	   			<div class="col-md-3"></div>
+	   			<div class="col-md-6">
+	   				<form class="form-horizontal" role="form">
+					  <div class="form-group">
+					    <div class="input-group margin-bottom-sm">
+							<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw fa-inverse"></i></span>
+							<input class="form-control" type="text" placeholder="Your Email address">
+						</div>
+					  </div>
+					  <div class="form-group">
+					      <button type="submit" class="btn btn-primary btn-lg btn-block">SIGN UP, AND KEEP IN TOUCH! <i class="fa fa-chevron-right fa-1x"></i></button>
+					  </div>
+					</form>
+	   			</div>
+	   			<div class="col-md-3"></div>
+			</div>
+		</div>
+	</div>
 </section>
 
 
@@ -139,41 +172,6 @@
 		</div>
 	</article>
  </section>
-
-
-
-{{-- Signup Section --}}
-<section id="signup" class="parallax">
-	<div id="mic" class="parallax" data-pos="114%" data-speed="0.9">
-		<div class="bg">
-		   	<div class="container">
-
-		   	<div class="row">
-	   			<div class="col-md-12">
-	   				<h2>Do You Want To Hear More?!</h2>
-	   				
-	   			</div>
-			</div>
-	   		<div class="row">
-	   			<div class="col-md-3"></div>
-	   			<div class="col-md-6">
-	   				<form class="form-horizontal" role="form">
-					  <div class="form-group">
-					    <div class="input-group margin-bottom-sm">
-							<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw fa-inverse"></i></span>
-							<input class="form-control" type="text" placeholder="Your Email address">
-						</div>
-					  </div>
-					  <div class="form-group">
-					      <button type="submit" class="btn btn-primary btn-lg btn-block">SIGN UP, AND KEEP IN TOUCH! <i class="fa fa-chevron-right fa-1x"></i></button>
-					  </div>
-					</form>
-	   			</div>
-	   			<div class="col-md-3"></div>
-			</div>
-		</div>
-	</div>
-</section>
 
 
 

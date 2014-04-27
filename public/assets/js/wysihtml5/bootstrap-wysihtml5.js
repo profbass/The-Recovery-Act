@@ -1,6 +1,51 @@
 !function($, wysi) {
     "use strict";
 
+    var exec = function (composer) {        
+
+        var pre = this.state(composer);
+        
+        if (pre) {
+            
+            // caret is already within a <pre><code>...</code></pre>
+            composer.selection.executeAndRestore(function () {
+                var codeSelector = pre.querySelector("code");
+                wysi.dom.replaceWithChildNodes(pre);
+                if (codeSelector) {
+                    wysi.dom.replaceWithChildNodes(pre);
+                    hljs.highlightBlock(codeSelector);
+                }
+            });
+        } else {
+                        
+            // Wrap in <pre><code>...</code></pre>
+            var range = composer.selection.getRange();
+
+            if (!range) return false;
+
+            var selectedNodes = range.extractContents(),
+                preElem = composer.doc.createElement("pre"),
+                codeElem = composer.doc.createElement("code");
+            
+            preElem.appendChild(codeElem);
+            codeElem.appendChild(selectedNodes);
+            range.insertNode(preElem);
+            hljs.highlightBlock(codeElem);
+            composer.selection.selectNode(preElem);
+            
+        }
+    };
+
+    var state = function (composer) {        
+        var selectedNode = composer.selection.getSelectedNode();
+        return wysi.dom.getParentElement(selectedNode, { nodeName: "CODE" }) && wysi.dom.getParentElement(selectedNode, { nodeName: "PRE" });
+    };
+
+    wysi.commands.formatCode = {
+        exec: exec,
+        state: state
+    };
+
     var tpl = {
         "font-styles": function(locale, options) {
             var size = (options && options.size) ? ' btn-'+options.size : '';
@@ -35,10 +80,10 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
               "<div class='btn-group'>" +
-                "<a class='btn" + size + "' data-wysihtml5-command='insertUnorderedList' title='" + locale.lists.unordered + "' tabindex='-1'><i class='icon-list'></i></a>" +
-                "<a class='btn" + size + "' data-wysihtml5-command='insertOrderedList' title='" + locale.lists.ordered + "' tabindex='-1'><i class='icon-th-list'></i></a>" +
-                "<a class='btn" + size + "' data-wysihtml5-command='Outdent' title='" + locale.lists.outdent + "' tabindex='-1'><i class='icon-indent-right'></i></a>" +
-                "<a class='btn" + size + "' data-wysihtml5-command='Indent' title='" + locale.lists.indent + "' tabindex='-1'><i class='icon-indent-left'></i></a>" +
+                "<a class='btn" + size + "' data-wysihtml5-command='insertUnorderedList' title='" + locale.lists.unordered + "' tabindex='-1'><i class='fa fa-list-ul'></i></a>" +
+                "<a class='btn" + size + "' data-wysihtml5-command='insertOrderedList' title='" + locale.lists.ordered + "' tabindex='-1'><i class='fa fa-list-ol'></i></a>" +
+                "<a class='btn" + size + "' data-wysihtml5-command='Outdent' title='" + locale.lists.outdent + "' tabindex='-1'><i class='fa fa-outdent'></i></a>" +
+                "<a class='btn" + size + "' data-wysihtml5-command='Indent' title='" + locale.lists.indent + "' tabindex='-1'><i class='fa fa-indent'></i></a>" +
               "</div>" +
             "</li>";
         },
@@ -46,7 +91,9 @@
         "link": function(locale, options) {
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
-              "<div class='bootstrap-wysihtml5-insert-link-modal modal hide fade'>" +
+              "<div class='bootstrap-wysihtml5-insert-link-modal modal fade'>" +
+                "<div class='modal-dialog' style='left:0;'>" +
+                "<div class='modal-content'>" +
                 "<div class='modal-header'>" +
                   "<a class='close' data-dismiss='modal'>&times;</a>" +
                   "<h3>" + locale.link.insert + "</h3>" +
@@ -56,18 +103,22 @@
                   "<label class='checkbox'> <input type='checkbox' class='bootstrap-wysihtml5-insert-link-target' checked>" + locale.link.target + "</label>" +
                 "</div>" +
                 "<div class='modal-footer'>" +
-                  "<a href='#' class='btn' data-dismiss='modal'>" + locale.link.cancel + "</a>" +
-                  "<a href='#' class='btn btn-primary' data-dismiss='modal'>" + locale.link.insert + "</a>" +
+                  "<a href='#' class='btn" + size + "' data-dismiss='modal'>" + locale.link.cancel + "</a>" +
+                  "<a href='#' class='btn" + size + " btn-primary' data-dismiss='modal'>" + locale.link.insert + "</a>" +
+                "</div>" +
+                "</div>" +
                 "</div>" +
               "</div>" +
-              "<a class='btn" + size + "' data-wysihtml5-command='createLink' title='" + locale.link.insert + "' tabindex='-1'><i class='icon-share'></i></a>" +
+              "<a class='btn" + size + "' data-wysihtml5-command='createLink' title='" + locale.link.insert + "' tabindex='-1'><i class='fa fa-link'></i></a>" +
             "</li>";
         },
 
         "image": function(locale, options) {
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
-              "<div class='bootstrap-wysihtml5-insert-image-modal modal hide fade'>" +
+              "<div class='bootstrap-wysihtml5-insert-image-modal modal fade'>" +
+                "<div class='modal-dialog' style='left:0;'>" +
+                "<div class='modal-content'>" +
                 "<div class='modal-header'>" +
                   "<a class='close' data-dismiss='modal'>&times;</a>" +
                   "<h3>" + locale.image.insert + "</h3>" +
@@ -76,11 +127,13 @@
                   "<input value='http://' class='bootstrap-wysihtml5-insert-image-url input-xlarge'>" +
                 "</div>" +
                 "<div class='modal-footer'>" +
-                  "<a href='#' class='btn' data-dismiss='modal'>" + locale.image.cancel + "</a>" +
-                  "<a href='#' class='btn btn-primary' data-dismiss='modal'>" + locale.image.insert + "</a>" +
+                  "<a href='#' class='btn" + size + "' data-dismiss='modal'>" + locale.image.cancel + "</a>" +
+                  "<a href='#' class='btn" + size + " btn-primary' data-dismiss='modal'>" + locale.image.insert + "</a>" +
+                "</div>" +
+                "</div>" +
                 "</div>" +
               "</div>" +
-              "<a class='btn" + size + "' data-wysihtml5-command='insertImage' title='" + locale.image.insert + "' tabindex='-1'><i class='icon-picture'></i></a>" +
+              "<a class='btn" + size + "' data-wysihtml5-command='insertImage' title='" + locale.image.insert + "'><i class='fa fa-picture-o'></i></a>" +
             "</li>";
         },
 
@@ -88,10 +141,19 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
               "<div class='btn-group'>" +
-                "<a class='btn" + size + "' data-wysihtml5-action='change_view' title='" + locale.html.edit + "' tabindex='-1'><i class='icon-pencil'></i></a>" +
+                "<a class='btn" + size + "' data-wysihtml5-action='change_view' title='" + locale.html.edit + "' tabindex='-1'><i class='fa fa-list-alt'></i></a>" +
               "</div>" +
             "</li>";
         },
+
+        "format-code": function(locale, options) {
+              var size = (options && options.size) ? ' btn-'+options.size : '';
+              return "<li>" +
+                "<div class='btn-group'>" +
+                  "<a class='btn " + size + "' data-wysihtml5-action='formatCode' title='" + locale.formatCode.highlight + "'><i class='fa fa-list-alt'></i></a>" +
+                "</div>" +
+              "</li>";
+         },
 
         "color": function(locale, options) {
             var size = (options && options.size) ? ' btn-'+options.size : '';
@@ -147,7 +209,7 @@
 
         createEditor: function(options) {
             options = options || {};
-
+            
             // Add the toolbar to a clone of the options object so multiple instances
             // of the WYISYWG don't break because "toolbar" is already defined
             options = $.extend(true, {}, options);
@@ -184,16 +246,19 @@
                 if(value === true) {
                     toolbar.append(templates(key, locale[culture], options));
 
-                    if(key === "html") {
-                        this.initHtml(toolbar);
-                    }
-
                     if(key === "link") {
                         this.initInsertLink(toolbar);
                     }
 
                     if(key === "image") {
                         this.initInsertImage(toolbar);
+                    }
+                    if (key == "format-code") {
+                        this.initFormatCode(toolbar);
+                    }
+
+                    if(key === "html") {
+                        this.initHtml(toolbar);
                     }
                 }
             }
@@ -225,6 +290,14 @@
             var changeViewSelector = "a[data-wysihtml5-action='change_view']";
             toolbar.find(changeViewSelector).click(function(e) {
                 toolbar.find('a.btn').not(changeViewSelector).toggleClass('disabled');
+            });
+        },
+        
+        initFormatCode: function (toolbar) {
+            var self = this;
+            var formatCodeSelector = "a[data-wysihtml5-action='formatCode']";
+            toolbar.find(formatCodeSelector).click(function (e) {
+                self.editor.composer.commands.exec("formatCode");
             });
         },
 
@@ -379,7 +452,7 @@
             return methods.init.apply( this, arguments );
         } else {
             $.error( 'Method ' +  method + ' does not exist on jQuery.wysihtml5' );
-        }
+        }    
     };
 
     $.fn.wysihtml5.Constructor = Wysihtml5;
@@ -392,6 +465,7 @@
         "html": false,
         "link": true,
         "image": true,
+        "format-code": false,
         events: {},
         parserRules: {
             classes: {
@@ -437,6 +511,10 @@
                     }
                 },
                 "a":  {
+                    set_attributes: {
+                        target: "_blank",
+                        rel:    "nofollow"
+                    },
                     check_attributes: {
                         'href': "url", // important to avoid XSS
                         'target': 'alt',
@@ -504,6 +582,9 @@
                 navy: "Navy",
                 blue: "Blue",
                 orange: "Orange"
+            }, 
+            formatCode: {
+                highlight: "Highlight Code"
             }
         }
     };

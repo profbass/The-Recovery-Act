@@ -52,12 +52,11 @@
 			    <div class="navbar-header">
 			      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
+				        <i class="fa fa-bars fa-2x"></i>
 				    </button>
-				    <a href="/" class="navbar-brand"> 
-				     	<span id="logo"><img src="assets/img/logo-tra.png" width="110" /></span>
+
+				    <a href="/" id="logo" class="navbar-brand"> 
+				     	<span>&nbsp;</span>
 				    </a>
 			    </div>
 
@@ -146,7 +145,7 @@
 	    <div id="footer">
 	      <div class="container">
 	        <div class="row-fluid">
-				<div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 col-mini">
+				<div class="col-lg-5 col-md-4 col-sm-4 col-xs-12 col-mini">
 					<h5>OUR SITE</h5>
 					<p>
 					  Thank you for visiting us! 
@@ -165,7 +164,7 @@
 					</p>
 
 				</div>
-				<div class="col-lg-3 col-sm-4 col-xs-4 col-mini">
+				<div class="col-lg-3 col-sm-4 col-xs-6 col-mini">
 					<h5>Contact Us</h5>
 					<address>
 						The Recovery Act<br>
@@ -174,7 +173,7 @@
 					  <a href="#">Send Us An Email</a>
 					</address>
 				</div>
-				<div class="col-lg-4 col-sm-4 col-xs-4 col-mini">
+				<div class="col-lg-4 col-sm-4 col-xs-6 col-mini">
 					<h5>Connect</h5>
 					<ul class="sn-list clearfix">				                	
 						<li class="pull-left">

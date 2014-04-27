@@ -223,7 +223,8 @@ class AdminBlogsController extends AdminController {
      */
     public function getData()
     {
-        $posts = Post::select(array('posts.id', 'posts.title', 'posts.id as comments', 'posts.created_at'));
+        $posts = Post::select(array('posts.id', 'posts.title', 'posts.id as comments', 'posts.created_at'))->orderBy('created_at', 'DESC');
+        //the orderby breaks the ajax sorting on the page, FYI.
 
         return Datatables::of($posts)
 

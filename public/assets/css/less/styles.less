@@ -33,6 +33,10 @@ p, address{
 a{
 	color:#5E8A92;
 }
+hr{
+	border-top: 2px solid rgba(136,136,136,0.2);
+	border-bottom: 2px solid rgba(238,238,238,0.6);
+}
 // Button styles
 
 .btn{
@@ -62,45 +66,53 @@ a{
 }
 
 //top logo
-#logo{
-		width: 130px;
-		height: 70px;
-		padding: 5px 0 0 10px;
+a#logo{
+	background: #fff;
+	padding: 5px;
+	display: block;
+	position: relative;
+	span{
+		background: url(/assets/img/logo-tra.png) no-repeat;
 		display: block;
-		background-color: #fff;
-		-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-		-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-
-	div:before, div:after{
-		position: absolute;
-		width: 40%;
-		height: 10px;
-		content: ' ';
-		left: 2px;
-		bottom: 2px;
-		background: transparent;
-		-webkit-transform: skew(-5deg) rotate(-5deg);
-		-moz-transform: skew(-5deg) rotate(-5deg);
-		-ms-transform: skew(-5deg) rotate(-5deg);
-		-o-transform: skew(-5deg) rotate(-5deg);
-		transform: skew(-5deg) rotate(-5deg);
-		-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-		-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-		z-index: -1;
-	} 
-	div:after{
-		left: auto;
-		right: 2px;
-		-webkit-transform: skew(5deg) rotate(5deg);
-		-moz-transform: skew(5deg) rotate(5deg);
-		-ms-transform: skew(5deg) rotate(5deg);
-		-o-transform: skew(5deg) rotate(5deg);
-		transform: skew(5deg) rotate(5deg);
+	}
+	
+}
+@media only screen and (min-width: 990px) {
+	a#logo{
+		width: 125px;
+		height: 50px;
+		span{
+			width: 115px;
+			height: 45px;
+		}
+		
 	}
 }
-
+@media only screen and (min-width: 767px) and (max-width: 990px) {
+	a#logo{
+		width: 80px;
+		height: 60px;
+		margin-bottom: -5px;
+		span{
+			background-size: 80% auto;
+			width: 70px; 
+			height: 40px;
+		}
+		
+	}
+}
+@media only screen and (max-width: 767px) {
+	a#logo{
+		width: 80px;
+		height: 55px;
+		span{
+			background-size: 80% auto;
+			width: 70px;
+			height: 50px;
+		}
+		
+	}
+}
 //Top Navbar overrides
 nav.navbar{
 	background: url(/assets/img/box-texture.png) repeat-x rgba(70, 64, 59, 1);
@@ -306,32 +318,44 @@ form{
 #wrap{
 	overflow-x: hidden;
 }
-// Parallax
-// #home { 
-// 	height: 600px;
-// 	width: 100%;
-// 	//-webkit-transform: translateX(10px) rotate(10deg) translateY(5px);
-//     //transform: translateX(10px) rotate(10deg) translateY(5px);
-// 	//margin-left: -25px;
-// 	//border-bottom: 20px solid rgba(70, 64, 59, 1);
-// 	article{
-// 		background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;
-// 		background-size: cover;
-// 		-webkit-background-size: cover;
-// 		color: white;
-// 		//margin: 0 0 0 -400px;
-// 		padding: 0;
-// 		//margin-left: 25px;
-// 	    //-webkit-transform: translateX(0) rotate(-10deg) translateY(0);
-//      	//transform: translateX(0) rotate(-10deg) translateY(0);
-     	
-//     }
-// }
-
+// Content Banner for Sub Pages
+.content-banner{
+	background: 50% 0 no-repeat fixed;
+ 	background-size: 100% auto;
+	height: 0;
+	padding-bottom:20%;
+	h1{
+		color: #fff;
+		text-shadow: 3px 1px 1px rgba(0,0,0,0.7); 
+	}
+	@media only screen and (min-width: 990px) {
+		h1{
+			font-size:3.3em;
+			padding-top:10%;
+		}
+	}
+	@media only screen and (min-width: 767px) and (max-width: 990px) {
+		h1{
+			font-size:2.8em;
+			padding-top:7%;
+		}
+	}
+	@media only screen and (max-width: 767px) {
+		h1{
+			font-size:2.2em; 
+			padding-top:5%;
+			span{
+				display: none;
+			}
+		}
+	}
+}
+/************** 
+***************
+homepage and subpage styles 
+**************
+**************/
 #home {
-	// background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;
- // 	background-size: cover;
- // 	-webkit-background-size: cover;
  	overflow: hidden;
  	height: 0;
  	padding-bottom:40%;
@@ -339,9 +363,15 @@ form{
  	position: relative;
  	.original-image{
  		background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;	
+		-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+		-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+		box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
  	}
  	.blurred-image{
  		background: url(/assets/img/bg-tra-blur.jpg) 100% 0 no-repeat fixed;
+		-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+		-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+		box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
  		opacity: 0;
  	}
  	.img-src{
@@ -353,57 +383,14 @@ form{
 	 	padding-bottom:40%;
 	 	width:100%;
  	}
- 	.square{
- 		width: 600px;
- 		height: 600px;
- 		transform: rotate(-45deg);
- 		-webkit-transform: rotate(-45deg);
- 		overflow: hidden;
- 		div{
-
-	 		width: 1200px;
-	 		height: 1200px;
-	 		margin: 96px 0 0 -265px;
-			background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;
-		 	background-size: cover;
-		 	-webkit-background-size: cover;
-	 		transform: rotate(45deg);
-	 		-webkit-transform: rotate(45deg);
- 		    //-webkit-filter: grayscale(1);
- 		}
-
- 	}
-	.bandpic{
-	 	width: 100%;
-	 	overflow: hidden;
-		-webkit-transform: translateX(10px) rotate(45deg) translateY(5px);
-		transform: translateX(10px) rotate(45deg) translateY(5px);
-		div{
-			background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;
-		 	background-size: cover;
-		 	-webkit-background-size: cover;
-		 	padding-bottom: 40%;
-		 	max-width: 100%;
-		 	-webkit-transform: translateX(0) rotate(-45deg) translateY(0);
-	     	transform: translateX(0) rotate(-45deg) translateY(0);
- 	        -webkit-filter: grayscale(1);
- 	        //-webkit-filter: blur(5px);
- 	        //filter: hue-rotate(90deg)
-     	}
- 	}
 }
 #news { 
-	//background: url(/assets/img/bg-floral.png) 50% 0 fixed;
-	//background-size: 10% auto;
-	//height: 400px;
 	width: 100%;
-	//margin: -150px auto 0 auto;
 	z-index: 100;
 	padding: 0 0 50px 0 !important;
 	color: #46403B;
 	h1{
 		span{
-			//color: #999;
 			font-size: 0.5em;
 			font-weight: 300;
 		}
@@ -413,27 +400,8 @@ form{
 		height: 200px;
 	}
 	.content-banner{
-		background: url(/assets/img/pic-band-walking.jpg) 50% 0 no-repeat fixed;
-	 	background-size: 100% auto;
-		height: 0;
-		padding-bottom:20%;
-		h1{
-			font-size:3.5em;
-			color: #fff;
-			text-shadow: 3px 1px 1px rgba(0,0,0,0.7); 
-			margin-top:25%;
-		}
+		background-image: url(/assets/img/pic-band-walking.jpg);
 	}
-	/*
-	#guitar{
-		background: url(/assets/img/pic-electric-guitar.png) -175% 0 no-repeat fixed;
-		background-size: 800px auto;
-		height: 400px;
-		width: 100%;
-		left:0;
-		z-index: 200;
-	}
-	*/
 }
 #news-post{
 	padding: 50px 0;
@@ -446,6 +414,9 @@ form{
 	text-align: center;
 	overflow:hidden;
 	position: relative;
+	-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+	-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+	box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
 	#mic{
 		background: url(/assets/img/pic-microphone.png) 175% 0 no-repeat fixed;
 		background-size: 600px auto;
@@ -468,13 +439,18 @@ form{
 #shows { 
 	background: url(/assets/img/bg-tectured-paper.png) repeat 50% 0 fixed;
 	background-size: 200px 200px;
-	//background: url(/assets/img/bg-concert.jpg) 50% 0 no-repeat fixed;
-	//background-size: 130% auto;
-	//color: white;
-	padding: 30px 0 50px 0 !important;
 	overflow: hidden;
 	h1{
-		text-align: center;
+		span{
+			font-size: 0.5em;
+			font-weight: 300;
+		}
+	}
+	.content-banner{
+		background-image: url(/assets/img/pic-studio.jpg);
+	}
+	.show-wrapper{
+		margin: 35px 0;
 	}
 	.date-wrapper{
 		position: relative;
@@ -522,10 +498,13 @@ form{
 		font-size: 1.em;
 		line-height: 105%;
 	}
-	p{
+	p.address{
 		font-weight:600;
 		line-height: 150%;
 		color:#333;
+	}
+	.content{
+		margin: 10px 0 0 0;
 	}
 }
 

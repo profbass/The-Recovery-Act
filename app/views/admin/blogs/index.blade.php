@@ -13,7 +13,7 @@
 @section('content')
 	<div class="page-header">
 		<h3>
-			{{{ $title }}}
+			TRA News Reel
 
 			<div class="pull-right">
 				<a href="{{{ URL::to('admin/blogs/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
@@ -50,7 +50,7 @@
 		        "bServerSide": true,
 		        "sAjaxSource": "{{ URL::to('admin/blogs/data') }}",
 		        "fnDrawCallback": function ( oSettings ) {
-	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+	           		$(".iframe").colorbox({iframe:true, width:"90%", height:"90%"});
 	     		}
 			});
 		});

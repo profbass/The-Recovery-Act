@@ -28,7 +28,7 @@
 @section('content')
 
 <section id="news-post">
-	<div class="content-banner parallax" data-speed="0.8">
+	<div class="parallax" data-speed="0.8">
 		<div class="container parallax" data-speed="0.1">
 	   		<div class="row">
 	   			<div class="col-md-8">
