@@ -32,18 +32,12 @@ return array(
         {
             $collection->directory('assets/css', function($collection)
             {
-                //$collection->add('less/master.less')->apply('Less');
                 $collection->add('http://fonts.googleapis.com/css?family=Gilda+Display|Rock+Salt|Open+Sans:300,400,600,800');
                 $collection->add('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
                 $collection->add('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
-                $collection->add('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css')->apply('Less');
                 $collection->add('less/styles.less')->apply('Less');
                 $collection->add('less/animation.less')->apply('Less');
                 $collection->add('less/variables-custom.less')->apply('Less');
-
-
-               
-
             })->apply('UriRewriteFilter')->apply('CssMin');
 
             $collection->directory('assets/js', function($collection)
@@ -53,8 +47,7 @@ return array(
                 $collection->add('bootstrap/bootstrap.js');
                 //$collection->requireDirectory('../../../vendor/twbs/bootstrap/js');
                 $collection->add('app.js');
-                $collection->add('parallax.js');
-                $collection->requireDirectory('/load');
+                $collection->requireDirectory('/site-load');
             })->apply('JsMin');
         },
 
@@ -81,10 +74,7 @@ return array(
                 $collection->add('wysihtml5/wysihtml5-0.3.0.js');
                 $collection->add('wysihtml5/bootstrap-wysihtml5.js');
                 $collection->javascript('http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js');
-                $collection->add('datatables-bootstrap.js');
-                $collection->add('datatables.fnReloadAjax.js');
-                $collection->add('jquery.colorbox.js');
-                $collection->add('prettify.js');
+                $collection->requireDirectory('/admin-load');
             })->apply('JsMin');
         }
 

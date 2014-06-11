@@ -17,7 +17,12 @@
 
 		<!-- CSS
 		================================================== -->
-        {{ Basset::show('public.css') }}
+        <!-- Libs -->
+		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Gilda+Display|Rock+Salt|Open+Sans:300,400,600,800">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <!-- Grunt build -->
+		<link rel="stylesheet" href="/assets/builds/styles.css">
 
 		<style>
 		@section('styles')
@@ -209,6 +214,9 @@
 
 		<!-- Javascripts
 		================================================== -->
-        {{ Basset::show('public.js') }}
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="/assets/builds/TRA.min.js"></script>
+        
 	</body>
 </html>

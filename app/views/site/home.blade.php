@@ -35,9 +35,9 @@
 
 				@foreach($blog as $posts)
 
-			  		<div class="col-md-4">
-			  			<div class="box">
-				  			<img src="assets/img/bg-concert.jpg" />
+			  		<div class="col-xs-12 col-md-4 col-md-4">
+			  			<div class="box news-container">
+				  			<img src="assets/img/bg-concert.jpg" class="img-responsive" />
 				  			<div style="padding:30px">
 					  			<h2>{{ $posts->title }}</h2>
 					  			<p>{{ String::tidy(Str::limit(strip_tags($posts->content, 200))) }}</p>
