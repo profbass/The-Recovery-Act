@@ -1,7 +1,33 @@
 $( document ).ready(function() {  
+	var 
+		win = $(window),
+		animatedObj = $('.animatedElement')
+	; 
 
-	//set for none scroll
-	$('#nav').localScroll(800);
+	//load charts on scroll function
+	function animateElement(i, el, animationClass){
+		win.scroll(function(event) {
+			var self = $(el);
+			//console.log('scrolling');
+			if (self.visible(true) && self.hasClass('animated') == false) {
+		      	self.addClass('animated ' + animationClass);
+	    	}
+	    });
+	}
+
+	animatedObj.each(function(i, el) {
+	    var 
+	    	self = $(el),
+	    	animationClass = self.attr('data-animation')
+	    ;
+	    if (self.visible(true) && self.hasClass('animated') == false) {
+	      	self.addClass('animated ' + animationClass);
+	    } else {
+	    	animateElement(i, el, animationClass);
+	    } 
+	});
+
+	
 	/**
 	  Script for adding parallax to elements
 	  .parallax(xPosition, speedFactor, outerHeight) options:
@@ -9,6 +35,10 @@ $( document ).ready(function() {
 	  inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
 	  outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
 	**/
+
+	//set for none scroll
+	$('#nav').localScroll(800);
+
 	$('.parallax').each(function(){ collection, callback
 		var self = $(this);
 		//check for xPosition data on element
@@ -33,41 +63,3 @@ $( document ).ready(function() {
 		self.parallax(xPosition, speedFactor, outerHeight);
 	});
 });//end doc ready
-
-//JS to add class for animations when  element is scrolled to
-$(window).scroll(function() {
-	 var s = $(window).scrollTop(),
-        opacityVal = (s / 200.0);
-
-    $('.blurred-image').css('opacity', opacityVal);
-
-	// var mainNavbar = $('#topNav');
-	// var sidebar = $('#home-nav-bar');
- //    $window = $(window);
- //    offset = sidebar.offset();
- //    topPadding = 0;   
-
-	// if (($window.scrollTop() > offset.top) && !(mainNavbar.hasClass('show'))) {
- //        sidebar.hide();
- //        mainNavbar.show();
- //        mainNavbar.addClass('show');
- //    } else if ($window.scrollTop() < offset.top) {
- //        sidebar.show();
- //        mainNavbar.hide();
- //        mainNavbar.removeClass('remove');
- //    }
-
-	$('.animatedElement').each(function(){
-		var 
-			self = $(this),
-			imagePos = self.offset().top,
-			topOfWindow = $(document).height(),
-			animationClass = self.attr('data-animation')
-		;
-
-		if ((imagePos < topOfWindow+100) && !(self.hasClass(animationClass))) {
-			$(this).addClass(animationClass);
-			console.log('pos: ' + imagePos + ', win: ' + topOfWindow + ', class: ' + animationClass);
-		}
-	});
-});

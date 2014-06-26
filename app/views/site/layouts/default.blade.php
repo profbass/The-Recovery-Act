@@ -47,9 +47,8 @@
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
 		<!-- Navbar -->
-		<!--<div id="logo">
-			<div><a href="/"><img src="assets/img/logo-tra.png" /></a></div>
-		</div>-->
+		<div id="logo" class="animatedElement" data-animation="slideInDown"><a href="/"><img src="assets/img/logo-tra.png" /></a>
+		</div>
 
 		<nav class="navbar navbar-fixed-top" role="navigation">
 		  	<div class="container">
@@ -60,7 +59,7 @@
 				        <i class="fa fa-bars fa-2x"></i>
 				    </button>
 
-				    <a href="/" id="logo" class="navbar-brand"> 
+				    <a href="/" class="navbar-brand"> 
 				     	<span>&nbsp;</span>
 				    </a>
 			    </div>

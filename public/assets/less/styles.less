@@ -56,66 +56,42 @@ hr{
 }
 
 #content{
-	padding:47px 0 0 0;
+	padding:60px 0 0 0;
 }
 
-//top logo
-a#logo{
+//top logo 
+#logo{
 	background: #fff;
 	padding: 5px;
 	display: block;
-	position: relative;
-	span{
-		background: url(/assets/img/logo-tra.png) no-repeat;
-		display: block;
-	}
-	
-}
-@media only screen and (min-width: 990px) {
-	a#logo{
+	position: fixed;
+	z-index: 2000;
+	left: 20px;
+	width: 110px;
+	height: 70px;
+	@media (min-width: @screen-lg-min){
 		width: 125px;
-		height: 50px;
-		span{
-			width: 115px;
-			height: 45px;
-		}
-		
+		height: 77px;
 	}
-}
-@media only screen and (min-width: 767px) and (max-width: 990px) {
-	a#logo{
-		width: 80px;
-		height: 60px;
-		margin-bottom: -5px;
-		span{
-			background-size: 80% auto;
-			width: 70px; 
-			height: 40px;
-		}
-		
+	@media (min-width: @screen-md-min){
+		width: 125px;
+		height: 77px;
 	}
-}
-@media only screen and (max-width: 767px) {
-	a#logo{
-		width: 80px;
-		height: 55px;
-		span{
-			background-size: 80% auto;
-			width: 70px;
-			height: 50px;
-		}
-		
-	}
+	img{
+		width: 100%;
+	} 
+	
 }
 //Top Navbar overrides
 nav.navbar{
 	background: url(/assets/img/box-texture.png) repeat-x rgba(70, 64, 59, 1);
-    background-position: 0 -10px;
+    background-position: 0 -78px;
     width: 100%; 
     color: #999;
     border:none;
 	ul.nav-main{
-		//border-left: 2px solid rgba(178,148,124, 0.2);
+		// box-shadow: inset 0 0 13px rgba(0,0,0,0.8);
+ 	// 	-webkit-box-shadow: inset 0 0 13px rgba(0,0,0,0.8);
 		li{
 			//border-right: 2px solid rgba(178,148,124, 0.2);
 			i{
@@ -355,27 +331,17 @@ homepage and subpage styles
  	padding-bottom:40%;
  	width:100%;
  	position: relative;
- 	.original-image{
- 		background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;	
-		-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
-		-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
-		box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
- 	}
- 	.blurred-image{
- 		background: url(/assets/img/bg-tra-blur.jpg) 100% 0 no-repeat fixed;
-		-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
-		-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
-		box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
- 		opacity: 0;
- 	}
+	-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+	-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+	box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
  	.img-src{
+ 		background: url(/assets/img/bg-tra1.jpg) 100% 0 no-repeat fixed;
  		position: absolute;
  		background-size: cover;
 	 	-webkit-background-size: cover;
 	 	overflow: hidden;
-	 	height: 0;
-	 	padding-bottom:40%;
-	 	width:100%;
+	 	width:inherit;
+	 	height: 100%;
  	}
 }
 #news { 
@@ -383,6 +349,12 @@ homepage and subpage styles
 	z-index: 100;
 	padding: 0 0 50px 0 !important;
 	color: #46403B;
+	.box{
+		margin-bottom:20px;
+		.news-content{
+			padding: 10px 25px 25px 25px;
+		}
+	}
 	h1{
 		span{
 			font-size: 0.5em;
@@ -403,7 +375,10 @@ homepage and subpage styles
 #signup { 
 	background: url(/assets/img/bg-wood.png) 50% 0 fixed;
 	background-size: 30% auto;
-	height: 200px; 
+	height: 250px; 
+	@media (min-width: @screen-md-min){
+		height: 200px; 
+	}
 	color: #222;
 	text-align: center;
 	overflow:hidden;
@@ -412,7 +387,10 @@ homepage and subpage styles
 	-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
 	box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
 	#mic{
-		background: url(/assets/img/pic-microphone.png) 175% 0 no-repeat fixed;
+		background: none;
+		@media (min-width: @screen-md-min){
+			background: url(/assets/img/pic-microphone.png) 175% 0 no-repeat fixed;
+		}
 		background-size: 600px auto;
 		height: 400px;
 		width: 100%;
@@ -426,8 +404,13 @@ homepage and subpage styles
 			font-weight: 600;
 		}
 	}
+	i{
+		color: #999;
+	}
 	h2{
 		font-size: 32px;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+		color: #fff;
 	}
 }
 #shows { 
@@ -446,38 +429,59 @@ homepage and subpage styles
 	.show-wrapper{
 		margin: 35px 0;
 	}
-	.date-wrapper{
-		position: relative;
-		float: left;
-		height: 80px;
-		width: 80px;
-		div{
-			width:90px;
-			height: 90px;
-			background: url(/assets/img/box-texture.png) repeat-x #292c2d;
-			background-position: 0 bottom;
-			border-radius: 50%;
-			position: absolute;
-			h4{
-				position: absolute;
-				top:5px;
-				left:5px;
-				padding: 1px 10px 0 15px;
-				margin: 0;
-				text-align: center;
-				.hour{
-					display: block;
-					font-size: 2.2em;
-					border-bottom: 1px solid #555;
-					color: #999;
-					font-weight:800;
+	.show-cell{
+		padding: 0 0 50px 0;
+		.date-wrapper{
+			position: relative;
+			float: left;
+			margin-right:10px;
+			margin-bottom:25px;
+			height: 80px;
+			width: 80px;
+			@media (min-width: @screen-md-min){
+				height: 90px;
+				width: 90px;
+			}
+			div{
+				width:80px;
+				height: 80px;
+				@media (min-width: @screen-md-min){
+					height: 90px;
+					width: 90px;
 				}
-				.month{
-					padding: 2px 0 0 0;
-					display: block;
-					font-size: 1.5em;
-					color: #999;
-					font-weight:400;
+				background: url(/assets/img/box-texture.png) repeat-x #292c2d;
+				background-position: 0 bottom;
+				border-radius: 50%;
+				h4{
+					position: absolute;
+					top:5px;
+					left:5px;
+					padding: 1px 10px 0 13px;
+					@media (min-width: @screen-md-min){
+						padding-left:15px;
+					}
+					margin: 0;
+					text-align: center;
+					.hour{
+						display: block;
+						font-size: 1.9em;
+						@media (min-width: @screen-md-min){
+							font-size: 2.2em;
+						}
+						border-bottom: 1px solid #555;
+						color: #999;
+						font-weight:800;
+					}
+					.month{
+						padding: 2px 0 0 0;
+						display: block;
+						font-size: 1.3em;
+						@media (min-width: @screen-md-min){
+							font-size: 1.5em;
+						}
+						color: #999;
+						font-weight:400;
+					}
 				}
 			}
 		}
@@ -489,7 +493,6 @@ homepage and subpage styles
 	h2{
 		padding: 0 0 0 0;
 		margin: 0;
-		font-size: 1.em;
 		line-height: 105%;
 	}
 	p.address{

@@ -2,26 +2,19 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    concat: {
-      options: {
-        // define a string to put between each file in the concatenated output
-        separator: ';'
-      },
-      dist: {
-        // the files to concatenate
-        src: ['public/assets/js/site/**/*.js'],
-        // the location of the resulting JS file
-        dest: 'public/builds/<%= pkg.name %>.js'
-      }
-    },
     uglify: {
       options: {
         // the banner is inserted at the top of the output
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
-      dist: {
+      development: {
         files: {
-          'public/assets/builds/<%= pkg.name %>.min.js': ['<%= concat.dist.src %>']
+          'public/assets/builds/<%= pkg.name %>.min.js': 'public/assets/js/site/**/*.js'
+        }
+      },
+      admin: {
+        files: {
+          'public/assets/builds/<%= pkg.name %>-admin.min.js': 'public/assets/js/admin/**/*.js'
         }
       }
     },
@@ -46,12 +39,24 @@ module.exports = function(grunt) {
         },
         files: {
           // target.css file: source.less file
-          "public/assets/builds/styles.css": "public/assets/less/**/*.less"
+          "public/assets/builds/styles.css": "public/assets/less/master.less"
+        }
+      },
+      admin: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2
+        },
+        files: {
+          // target.css file: source.less file
+          "public/assets/builds/admin.css": "public/assets/css/**/*.css"
         }
       }
     },
     watch: {
       tasks: ['uglify'],
+      files: ['public/assets/js/site/**/*.js', 'public/assets/js/admin/**/*.js'],
       styles: {
         files: ['public/assets/less/**/*.less'], // which files to watch
         tasks: ['less'],
@@ -63,14 +68,13 @@ module.exports = function(grunt) {
   });
 
   
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
   
   //default grint task 
-  grunt.registerTask('default', ['concat', 'less', 'uglify', 'watch']);
+  grunt.registerTask('default', ['less', 'uglify', 'watch']);
 
   // this would be run by typing "grunt test" on the command line
   //grunt.registerTask('test', ['jshint', 'qunit']);
