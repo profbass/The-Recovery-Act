@@ -76,7 +76,7 @@
 						                </ul>
 					                @endif
 								  	@if ($member->bio)
-									  	<p>{{ $member->bio }}</p>
+									  	<p class="hidden-xs">{{ $member->bio }}</p>
 									@endif
 				            	</div>
 				            	<div class="dec-border bottom"></div>

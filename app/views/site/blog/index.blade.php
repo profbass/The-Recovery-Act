@@ -5,7 +5,7 @@
 
 
 <section id="news">
-	<div class="content-banner parallax" data-speed="0.2">
+	<div class="content-banner parallax" data-pos="50%" data-speed="0.2">
 		<div class="container parallax" data-speed="0.5">
 	   		<div class="row">
 	   			<div class="col-md-11 col-md-offset-1 title-wrapper">

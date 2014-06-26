@@ -26,8 +26,7 @@
 	   	<div class="container">
 	   		<div class="row">
 	   			<div class="col-md-12">
-	   				<h1>{ News } <span class="font-sans-serif">here is what we've been up to</span></h1>
-	   				<p>&nbsp;</p>
+	   				<h1>{ News Reel } </h1>
 	   				<div class="dec-border large-top"></div>
 	   				<p>&nbsp;</p>
 	   			</div>
@@ -76,8 +75,8 @@
 	   			</div>
 			</div>
 	   		<div class="row">
-	   			<div class="col-md-3"></div>
-	   			<div class="col-md-6">
+	   			<div class="col-xs-1 col-md-3"></div>
+	   			<div class="col-xs-10 col-md-6">
 	   				<form class="form-horizontal" role="form">
 					  <div class="form-group">
 					    <div class="input-group margin-bottom-sm">
@@ -86,11 +85,11 @@
 						</div>
 					  </div>
 					  <div class="form-group">
-					      <button type="submit" class="btn btn-primary btn-lg btn-block">SIGN UP, AND KEEP IN TOUCH! <i class="fa fa-chevron-right fa-1x"></i></button>
+					      <button type="submit" class="btn btn-primary btn-md btn-block">SIGN UP, AND KEEP IN TOUCH! <i class="fa fa-chevron-right fa-1x"></i></button>
 					  </div>
 					</form>
 	   			</div>
-	   			<div class="col-md-3"></div>
+	   			<div class="col-xs-1 col-md-3"></div>
 			</div>
 		</div>
 	</div>
@@ -99,13 +98,12 @@
 
 {{-- Shows --}}
 <section id="shows">
-	<article class="animatedElement" data-animation="slideInDown">
+	<article>
 		<div class="container">
 	   		<div class="row">
 	   			<div class="col-md-12">
 	   				<h1>{ Upcoming Shows }</h1>
 	   				<div class="dec-border large-top"></div>
-	   				<p>&nbsp;</p>
 	   				<p>&nbsp;</p>
 	   			</div>
 	   		</div>
@@ -113,7 +111,7 @@
 
 				@foreach($shows as $show)
 
-			  		<div class="col-xs-12 col-md-4 show-cell">
+			  		<div class="col-xs-12 col-md-4 show-cell animatedElement" data-animation="slideInDown">
 			  			<div class="date-wrapper">
 				  			<div>
 					  			<h4>

@@ -51,79 +51,73 @@
 		</div>
 
 		<nav class="navbar navbar-fixed-top" role="navigation">
-		  	<div class="container">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				        <span class="sr-only">Toggle navigation</span>
-				        <i class="fa fa-bars fa-2x"></i>
-				    </button>
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header hidden-sm">
+		      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <i class="fa fa-bars fa-2x"></i>
+			    </button>
+		    </div>
 
-				    <a href="/" class="navbar-brand"> 
-				     	<span>&nbsp;</span>
-				    </a>
-			    </div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      	<ul class="nav navbar-nav nav-main">
+					<li {{ (Request::is('/blog') ? ' class="active"' : '') }}>
+							<a href="{{{ URL::to('/blog') }}}">
+							news reel
+							<span class="title hidden-xs">NEWS AND RANDOMNESS</span>
+						</a>
+					</li>
+					<li style="padding-top:20px;" class="hidden-xs">/</li>
+					<li {{ (Request::is('/news') ? ' class="active"' : '') }}>
+						<a href="{{{ URL::to('/shows') }}}">
+							shows
+							<span class="title hidden-xs">COME SEE IT LIVE</span>
+						</a>
+					</li>
+					<li style="padding-top:20px;" class="hidden-xs">/</li>
+					<li {{ (Request::is('/band') ? ' class="active"' : '') }}>
+						<a href="{{{ URL::to('/band') }}}">
+							the band
+							<span class="title hidden-xs">MEET THE ACT</span>
+						</a>
+					</li>
+					<li style="padding-top:20px;" class="hidden-xs">/</li>
+					<li {{ (Request::is('/news') ? ' class="active"' : '') }}>
+						<a href="{{{ URL::to('/shows') }}}">
+							media
+							<span class="title hidden-xs">MUSIC, VIDEOS AND MORE!</span>
+						</a>
+					</li>
+				</ul>
 
-			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      	<ul class="nav navbar-nav nav-main">
-						<li {{ (Request::is('/blog') ? ' class="active"' : '') }}>
-								<a href="{{{ URL::to('/blog') }}}">
-								news reel
-								<span class="title">NEWS AND RANDOMNESS</span>
-							</a>
-						</li>
-						<li style="padding-top:20px;">/</li>
-						<li {{ (Request::is('/news') ? ' class="active"' : '') }}>
-							<a href="{{{ URL::to('/shows') }}}">
-								shows
-								<span class="title">COME SEE IT LIVE</span>
-							</a>
-						</li>
-						<li style="padding-top:20px;">/</li>
-						<li {{ (Request::is('/band') ? ' class="active"' : '') }}>
-							<a href="{{{ URL::to('/band') }}}">
-								the band
-								<span class="title">MEET THE ACT</span>
-							</a>
-						</li>
-						<li style="padding-top:20px;">/</li>
-						<li {{ (Request::is('/news') ? ' class="active"' : '') }}>
-							<a href="{{{ URL::to('/shows') }}}">
-								media
-								<span class="title">MUSIC, VIDEOS AND MORE!</span>
-							</a>
-						</li>
-					</ul>
-
-	                <!-- <ul class="nav navbar-nav pull-right sn-list">
-	                	<li>
-	                    	<a href="{{{ URL::to('/contact-us') }}}" target="_blank" title="" class="sn-links email">
-	                        	<span class="fa-stack fa-lg fa-1x">
-								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-								  <i class="fa fa-envelope-o fa-stack-1x"></i>
-								</span>
-							</a>
-	                    </li>
-	                    <li>
-	                    	<a href="https://www.facebook.com/TheRecoveryAct" target="_blank" title="" class="sn-links facebook">
-	                        	<span class="fa-stack fa-lg fa-1x">
-								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-								  <i class="fa fa-facebook fa-stack-1x"></i>
-								</span>
-							</a>
-	                    </li>
-	                    <li>
-	                        <a href="#" target="_blank" title="" class="sn-links twitter">
-	                        	<span class="fa-stack fa-lg fa-1x">
-								  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-								  <i class="fa fa-twitter fa-stack-1x"></i>
-								</span>
-							</a>
-	                    </li>
-	                </ul> -->
-	            </div><!-- /.navbar-collapse -->
- 			</div><!-- /.container-fluid -->
+                <!-- <ul class="nav navbar-nav pull-right sn-list">
+                	<li>
+                    	<a href="{{{ URL::to('/contact-us') }}}" target="_blank" title="" class="sn-links email">
+                        	<span class="fa-stack fa-lg fa-1x">
+							  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+							  <i class="fa fa-envelope-o fa-stack-1x"></i>
+							</span>
+						</a>
+                    </li>
+                    <li>
+                    	<a href="https://www.facebook.com/TheRecoveryAct" target="_blank" title="" class="sn-links facebook">
+                        	<span class="fa-stack fa-lg fa-1x">
+							  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+							  <i class="fa fa-facebook fa-stack-1x"></i>
+							</span>
+						</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" title="" class="sn-links twitter">
+                        	<span class="fa-stack fa-lg fa-1x">
+							  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+							  <i class="fa fa-twitter fa-stack-1x"></i>
+							</span>
+						</a>
+                    </li>
+                </ul> -->
+            </div><!-- /.navbar-collapse -->
 		</nav>
 		
 		<!-- ./ navbar -->
