@@ -37,14 +37,24 @@
 	 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
 	<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
 
-	<!-- iOS favicons. -->
+  	<!-- Libs -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+	<!-- Grunt build -->
+	<link rel="stylesheet" href="/assets/builds/admin.css">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{{ asset('assets/ico/apple-touch-icon-144-precomposed.png') }}}">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{{ asset('assets/ico/apple-touch-icon-114-precomposed.png') }}}">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{{ asset('assets/ico/apple-touch-icon-72-precomposed.png') }}}">
 	<link rel="apple-touch-icon-precomposed" href="{{{ asset('assets/ico/apple-touch-icon-57-precomposed.png') }}}">
-
-	<!-- CSS -->
-    {{ Basset::show('admin.css') }}
+	<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
 
 	<style>
 	body {
@@ -145,13 +155,13 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     
-    <script src="{{asset('assets/js/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
-    <script src="{{asset('assets/js/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
+    <script src="{{asset('assets/js/admin/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
+    <script src="{{asset('assets/js/admin/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-    <script src="{{asset('assets/js/datatables-bootstrap.js')}}"></script>
-    <script src="{{asset('assets/js/datatables.fnReloadAjax.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.colorbox.js')}}"></script>
-    <script src="{{asset('assets/js/prettify.js')}}"></script>
+    <script src="{{asset('assets/js/admin/datatables-bootstrap.js')}}"></script>
+    <script src="{{asset('assets/js/admin/datatables.fnReloadAjax.js')}}"></script>
+    <script src="{{asset('assets/js/admin/jquery.colorbox.js')}}"></script>
+    <script src="{{asset('assets/js/admin/prettify.js')}}"></script>
 
     <script type="text/javascript">
     	$('.wysihtml5').wysihtml5();
