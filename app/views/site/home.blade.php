@@ -35,7 +35,7 @@
 
 				@foreach($blog as $posts)
 
-			  		<div class="col-xs-12 col-md-4 col-md-4">
+			  		<div class="col-xs-12 col-sm-6 col-md-4 col-md-4">
 			  			<div class="box news-container">
 				  			<img src="assets/img/bg-concert.jpg" class="img-responsive" />
 				  			<div class="news-content">
@@ -111,7 +111,7 @@
 
 				@foreach($shows as $show)
 
-			  		<div class="col-xs-12 col-md-4 show-cell animatedElement" data-animation="slideInDown">
+			  		<div class="col-xs-12 col-sm-4 col-md-4 show-cell animatedElement" data-animation="slideInDown">
 			  			<div class="date-wrapper">
 				  			<div>
 					  			<h4>

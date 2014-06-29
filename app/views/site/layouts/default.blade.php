@@ -91,7 +91,7 @@
 					</li>
 				</ul>
 
-                <!-- <ul class="nav navbar-nav pull-right sn-list">
+                <ul class="nav navbar-nav pull-right hidden-xs hidden-sm sn-list">
                 	<li>
                     	<a href="{{{ URL::to('/contact-us') }}}" target="_blank" title="" class="sn-links email">
                         	<span class="fa-stack fa-lg fa-1x">
@@ -108,15 +108,15 @@
 							</span>
 						</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#" target="_blank" title="" class="sn-links twitter">
                         	<span class="fa-stack fa-lg fa-1x">
 							  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
 							  <i class="fa fa-twitter fa-stack-1x"></i>
 							</span>
 						</a>
-                    </li>
-                </ul> -->
+                    </li> -->
+                </ul>
             </div><!-- /.navbar-collapse -->
 		</nav>
 		

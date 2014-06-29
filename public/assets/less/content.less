@@ -1,0 +1,385 @@
+/************** 
+***************
+General content styles 
+**************
+**************/
+
+// Content Banner for Sub Pages
+.content-banner{
+	background: 10% 0 no-repeat fixed;
+	background-size: 60% cover;
+ 	-webkit-background-size: 100% auto;
+ 	height: 200px;
+	@media (min-width: @screen-md-min){
+		height: 0;
+		padding-bottom:30%;
+	}
+	h1{
+		color: #fff;
+		text-shadow: 3px 1px 1px rgba(0,0,0,0.7); 
+	}
+	@media only screen and (min-width: 990px) {
+		h1{
+			font-size:3.3em;
+			padding-top:10%;
+		}
+	}
+	@media only screen and (min-width: 767px) and (max-width: 990px) {
+		h1{
+			font-size:2.8em;
+			padding-top:7%;
+		}
+	}
+	@media only screen and (max-width: 767px) {
+		h1{
+			font-size:2.2em; 
+			padding-top:5%;
+		}
+	}
+}
+
+/************** 
+***************
+homepage
+**************
+**************/
+#home {
+ 	overflow: hidden;
+ 	min-height: 200px;
+ 	width:100%;
+ 	position: relative;
+ 	.img-src{
+ 		background: url(/assets/img/bg-tra1.jpg) 100% 60px no-repeat fixed;
+	 	height: 200px;
+	 	background-size: 100% auto;
+ 		@media (min-width: @screen-sm-min) { 
+ 			height: 400px;
+ 			//background-size: cover;
+ 		}
+	 	overflow: hidden;
+	 	width: 100%;
+		-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+		-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+		box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
+ 	}
+}
+#news {
+	width: 100%;
+	z-index: 100;
+	padding: 0 0 50px 0 !important;
+	color: #46403B;
+	.box{
+		margin-bottom:20px;
+		.news-content{
+			padding: 10px 25px 25px 25px;
+		}
+	}
+	h1{
+		text-align: center;
+		span{
+			font-size: 0.5em;
+			font-weight: 300;
+		}
+	}
+	img{
+		width:100%;
+		height: 200px;
+	}
+	.content-banner{
+		background-image: url(/assets/img/pic-band-walking.jpg);
+	}
+	.box{
+
+	min-height:420px;
+	}
+}
+#news-post{
+	padding: 50px 0;
+}
+#signup { 
+	background: url(/assets/img/bg-wood.png) 50% 0 fixed;
+	background-size: 30% auto;
+	height: 250px; 
+	@media (min-width: @screen-md-min){
+		height: 200px; 
+	}
+	color: #222;
+	text-align: center;
+	overflow:hidden;
+	position: relative;
+	-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+	-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+	box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
+	#mic{
+		background: none;
+		@media (min-width: @screen-md-min){
+			background: url(/assets/img/pic-microphone.png) 175% 0 no-repeat fixed;
+		}
+		background-size: 600px auto;
+		height: 400px;
+		width: 100%;
+		right:0;
+		z-index: 200;
+	}
+	p{
+		font-size:19px;
+		font-weight: 300;
+		span{
+			font-weight: 600;
+		}
+	}
+	i{
+		color: #999;
+	}
+	h2{
+		font-size: 32px;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+		color: #fff;
+	}
+}
+#shows { 
+	background: url(/assets/img/bg-tectured-paper.png) repeat 50% 0 fixed;
+	background-size: 200px 200px;
+	overflow: hidden;
+	h1{
+		text-align: center;
+		span{
+			font-size: 0.5em;
+			font-weight: 300;
+		}
+	}
+	.content-banner{
+		background-image: url(/assets/img/pic-studio.jpg);
+	}
+	.show-wrapper{
+		margin: 35px 0;
+	}
+	.show-cell{
+		padding: 0 0 50px 0;
+		.date-wrapper{
+			position: relative;
+			float: left;
+			margin-right:10px;
+			margin-bottom:25px;
+			height: 80px;
+			width: 80px;
+			@media (min-width: @screen-md-min){
+				height: 90px;
+				width: 90px;
+			}
+			div{
+				width:80px;
+				height: 80px;
+				@media (min-width: @screen-md-min){
+					height: 90px;
+					width: 90px;
+				}
+				background: url(/assets/img/box-texture.png) repeat-x #292c2d;
+				background-position: 0 bottom;
+				border-radius: 50%;
+				h4{
+					position: absolute;
+					top:5px;
+					left:5px;
+					padding: 1px 10px 0 13px;
+					@media (min-width: @screen-md-min){
+						padding-left:15px;
+					}
+					margin: 0;
+					text-align: center;
+					.hour{
+						display: block;
+						font-size: 1.9em;
+						@media (min-width: @screen-md-min){
+							font-size: 2.2em;
+						}
+						border-bottom: 1px solid #555;
+						color: #999;
+						font-weight:800;
+					}
+					.month{
+						padding: 2px 0 0 0;
+						display: block;
+						font-size: 1.3em;
+						@media (min-width: @screen-md-min){
+							font-size: 1.5em;
+						}
+						color: #999;
+						font-weight:400;
+					}
+				}
+			}
+		}
+	}
+	.time{
+		color: #555;
+		font-weight: 200;
+	}
+	h2{
+		padding: 0 0 0 0;
+		margin: 0;
+		line-height: 105%;
+	}
+	p.address{
+		font-weight:600;
+		line-height: 150%;
+		color:#333;
+	}
+	.content{
+		margin: 10px 0 0 0;
+	}
+}
+
+/************** 
+***************
+band page styles 
+**************
+**************/
+section#band-wrapper{
+	article#Lindsay { 
+		background: url(/assets/img/pic-band-lindsay.jpg) 50% 0 fixed;
+		background-size: 100% auto;
+		// .top-parallax{
+		// 	background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+		// 	background-size: 100% auto;
+		// }
+	}
+	article#Eagle { 
+		background: url(/assets/img/pic-band-eagle.jpg) 50% 0 fixed;
+		background-size: 100% auto;
+		.top-parallax{
+			//background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+			background-size: 100% auto;
+		}
+	}
+	article#Jeff { 
+		background: url(/assets/img/pic-band-bird-dog.jpg) 50% 0 fixed;
+		.top-parallax{
+			//background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+			background-size: auto 1000px;
+		}
+	}
+	article#Willy { 
+		background: url(/assets/img/pic-band-willy.jpg) 50% 0 fixed;
+		.top-parallax{
+			//background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+		}
+	}
+	article#Tyler { 
+		background: url(/assets/img/pic-band-tyler.jpg) 50% 0 fixed;
+		.top-parallax{
+			//background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+		}
+	}
+	article#Christian { 
+		background: url(/assets/img/pic-band-christian.jpg) 50% 0 fixed;
+		background-size: auto 1000px;
+		.top-parallax{
+			//background: url(/assets/img/pic-band-lindsay-cutout.png) 50% 0 fixed no-repeat;
+		}
+	}
+	article.band-list{ 
+		padding-top: 0 !important;
+		color: white;
+		z-index: 1000;
+		width: 100%;
+		margin: 0;
+		.top-parallax{
+			background-size: auto 1000px !important;
+			z-index: 2000;
+			width: 100%;
+			margin: 0;
+			.container{
+				padding-top:100px;
+					text-align: center;
+				h2{
+					font-size: 3em;
+					color: #fff;
+					text-shadow: 2px 1px 1px rgba(0,0,0,0.7); 
+				}
+				h3{
+					margin-top: 5px;
+					font-weight:300;
+				}
+				p{
+					text-align: left;
+					line-height: 200%;
+					font-weight:300;
+				}
+				.sn-list{
+					list-style: none;
+					li{
+						display: inline-block;
+						margin-right:8px;
+					}
+				}
+			}
+		}
+	}
+}
+.dec-border {
+	height: 20px;
+}
+.dec-border.top{
+	background: url(/assets/img/border-top.png) center;
+}
+.dec-border.bottom{
+	background: url(/assets/img/border-bottom.png) center;
+}
+.dec-border {
+	height: 20px;
+	opacity: 0.3;
+}
+.dec-border.large-top{
+	background: url(/assets/img/border-top-lg.png) center;
+}
+.dec-border.large-bottom{
+	background: url(/assets/img/border-bottom-lg.png) center;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+	section#band-wrapper{
+		article.band-list{ 
+			height: 350px;
+			background-size: auto 768px !important;
+			.top-parallax{
+				background-size: auto 768px !important;
+				height: 350px;
+			}
+		}
+	}
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px ) {
+
+	section#band-wrapper{
+		article.band-list{ 
+			height: 450px;
+			background-size: auto 992px !important;
+			.top-parallax{
+				background-size: auto 992px !important;
+				height: 450px;
+			}
+		}
+	}
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+	section#band-wrapper{
+		article.band-list{ 
+			height: 700px;
+			background-size: auto 1000px !important;
+			.top-parallax{
+				background-size: auto 1000px !important;
+				height: 700px;
+			}
+		}
+	}
+
+}
