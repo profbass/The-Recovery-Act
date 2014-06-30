@@ -12,8 +12,8 @@ class DatabaseSeeder extends Seeder {
         $this->call('CommentsTableSeeder');
         $this->call('RolesTableSeeder');
         $this->call('PermissionsTableSeeder');
-    	$this->call('PhotosTableSeeder');
-		$this->call('NewsTableSeeder');
+    	$this->call('ShowsTableSeeder');
+		$this->call('BandMembersTableSeeder');
 	}
 
 }

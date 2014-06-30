@@ -143,25 +143,7 @@
 	    <div id="footer">
 	      <div class="container">
 	        <div class="row-fluid">
-				<div class="col-lg-5 col-md-4 col-sm-4 col-xs-12 col-mini">
-					<h5>OUR SITE</h5>
-					<p>
-					  Thank you for visiting us! 
-					  <br>
-					  Development and Support: <a href="http://www.tylerolmsted.com?utm_source=devicelabAbout" target="blank"> tylerolmsted.com</a>
-					  <br>
-					</p>
-					<p>Images: <a href="http://www.apix.ch/portfolio/?utm_source=devicelabSite" target="blank">APix Fotografie</a> 
-					</p>
-
-					<p role="navigation">
-					  
-					  <a href="/pages/terms-and-conditions" title="Terms and conditions">Terms and conditions</a>
-					  
-					  
-					</p>
-
-				</div>
+				
 				<div class="col-lg-3 col-sm-4 col-xs-6 col-mini">
 					<h5>Contact Us</h5>
 					<address>
@@ -200,6 +182,25 @@
 							</a>
 						</li>
 					</ul>
+				</div>
+				<div class="col-lg-5 col-md-4 col-sm-4 col-xs-12 col-mini">
+					<h5>OUR SITE</h5>
+					<p>
+					  Thank you for visiting us! 
+					  <br>
+					  Development and Support: <a href="http://www.tylerolmsted.com?utm_source=devicelabAbout" target="blank"> tylerolmsted.com</a>
+					  <br>
+					</p>
+					<p>Images: <a href="http://www.apix.ch/portfolio/?utm_source=devicelabSite" target="blank">APix Fotografie</a> 
+					</p>
+
+					<p role="navigation">
+					  
+					  <a href="/pages/terms-and-conditions" title="Terms and conditions">Terms and conditions</a>
+					  
+					  
+					</p>
+
 				</div>
 			</div>
 	      </div>
