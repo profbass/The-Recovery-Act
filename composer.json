@@ -10,12 +10,12 @@
         }
     ],
 	"require": {
-        "laravel/framework": "4.0.*",
+        "laravel/framework": "4.2.*",
         "twbs/bootstrap":  "3.0.0",
 		"zizaco/confide": "dev-master",
 		"zizaco/entrust": "dev-master",
 		"jasonlewis/basset": "dev-master",
-		"robclancy/presenter": "1.2.*",
+		"robclancy/presenter": "1.3.*",
         "j20/php-uuid": "dev-master",
         "bllim/datatables": "*"
 	},
