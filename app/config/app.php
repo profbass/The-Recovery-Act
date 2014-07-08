@@ -112,9 +112,8 @@ return array(
         /* Additional Providers */
         'Zizaco\Confide\ConfideServiceProvider', // Confide Provider
         'Zizaco\Entrust\EntrustServiceProvider', // Entrust Provider for roles
-        //'Basset\BassetServiceProvider', // Better Asset Management
+       	'Basset\BassetServiceProvider', // Better Asset Management
         'Robbo\Presenter\PresenterServiceProvider', // Presenter
-        //'Way\Generators\GeneratorsServiceProvider', //Generator Provider
         'Bllim\Datatables\DatatablesServiceProvider', // Datatables
 
         /* Uncomment for use in development */

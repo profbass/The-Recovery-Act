@@ -44,7 +44,8 @@
 	<link rel="apple-touch-icon-precomposed" href="{{{ asset('assets/ico/apple-touch-icon-57-precomposed.png') }}}">
 
 	<!-- CSS -->
-    {{ Basset::show('admin.css') }}
+    <!-- Grunt build -->
+	<link rel="stylesheet" href="/assets/builds/admin.css">
 
 	<style>
 	.tab-pane {
@@ -107,7 +108,22 @@
 	<!-- ./ container -->
 
 	<!-- Javascripts -->
-    {{ Basset::show('admin.js') }}
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
+    <script src="{{asset('assets/js/admin/wysihtml5/wysihtml5-0.3.0.js')}}"></script>
+    <script src="{{asset('assets/js/admin/wysihtml5/bootstrap-wysihtml5.js')}}"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets/js/admin/datatables-bootstrap.js')}}"></script>
+    <script src="{{asset('assets/js/admin/datatables.fnReloadAjax.js')}}"></script>
+    <script src="{{asset('assets/js/admin/jquery.colorbox.js')}}"></script>
+    <script src="{{asset('assets/js/admin/prettify.js')}}"></script>
+
+    <script type="text/javascript">
+    	$('.wysihtml5').wysihtml5();
+        $(prettyPrint);
+    </script>
 
     <script type="text/javascript">
     	$(document).ready(function(){
@@ -116,20 +132,21 @@
 				parent.$.colorbox.close();
 				return false;
 			});
+
 		});
-		$('.wysihtml5').wysihtml5({
-			"stylesheets": [],
-			"font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
-			"emphasis": true, //Italics, bold, etc. Default true
-			"lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
-			"html": true, //Button which allows you to edit the generated HTML. Default false
-			"link": true, //Button to insert a link. Default true
-			"image": false, //Button to insert an image. Default true,
-			"color": false, //Button to change color of font  
-			"blockquote": true, //Blockquote  
-			"size": "lg", //default: none, other options are xs, sm, lg
-		});
-       	$(prettyPrint)
+		// $('.wysihtml5').wysihtml5({
+		// 	"stylesheets": [],
+		// 	"font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
+		// 	"emphasis": true, //Italics, bold, etc. Default true
+		// 	"lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+		// 	"html": true, //Button which allows you to edit the generated HTML. Default false
+		// 	"link": true, //Button to insert a link. Default true
+		// 	"image": false, //Button to insert an image. Default true,
+		// 	"color": false, //Button to change color of font  
+		// 	"blockquote": true, //Blockquote  
+		// 	"size": "lg", //default: none, other options are xs, sm, lg
+		// });
+  //      	$(prettyPrint)
     </script>
 
     @yield('scripts')
