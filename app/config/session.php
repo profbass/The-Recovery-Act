@@ -135,4 +135,12 @@ return array(
 
 	'payload' => 'laravel_payload',
 
+	
+	/*
+	| Updates for Laravel 4.1
+	|
+	*/
+
+	'expire_on_close' => 'false',
+
 );
