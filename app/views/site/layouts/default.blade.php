@@ -82,6 +82,7 @@
 							<span class="title hidden-xs">MEET THE ACT</span>
 						</a>
 					</li>
+					<!--
 					<li style="padding-top:20px;" class="hidden-xs">/</li>
 					<li {{ (Request::is('/news') ? ' class="active"' : '') }}>
 						<a href="{{{ URL::to('/shows') }}}">
@@ -89,6 +90,7 @@
 							<span class="title hidden-xs">MUSIC, VIDEOS AND MORE!</span>
 						</a>
 					</li>
+					-->
 				</ul>
 
                 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm sn-list">

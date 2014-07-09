@@ -7,12 +7,13 @@ General content styles
 // Content Banner for Sub Pages
 .content-banner{
 	background: 10% 0 no-repeat fixed;
-	background-size: 60% cover;
+	background-size: 100% cover;
  	-webkit-background-size: 100% auto;
  	height: 200px;
-	@media (min-width: @screen-md-min){
+	@media (min-width: @screen-sm){
 		height: 0;
 		padding-bottom:30%;
+		background-size: 60% cover;
 	}
 	h1{
 		color: #fff;
@@ -44,29 +45,44 @@ homepage
 **************
 **************/
 #home {
+ 	background: url(/assets/img/bg-tra2.jpg) 100% 60px no-repeat fixed;
+	background-size: 100% auto;
  	overflow: hidden;
  	min-height: 200px;
  	width:100%;
- 	position: relative;
- 	.img-src{
- 		background: url(/assets/img/bg-tra1.jpg) 100% 60px no-repeat fixed;
-	 	height: 200px;
-	 	background-size: 100% auto;
- 		@media (min-width: @screen-sm-min) { 
- 			height: 400px;
- 			//background-size: cover;
- 		}
-	 	overflow: hidden;
-	 	width: 100%;
-		-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
-		-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
-		box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
- 	}
+	@media (min-width: @screen-sm-min) { 
+		height: 400px;
+	}
+	-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+	-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+	box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
+	.welcome-text{
+		background: url(/assets/img/txt-intro.png) 100% 60px no-repeat fixed;
+		background-size: 70% auto;
+		min-height: 200px;
+	 	width:100%;
+		@media (min-width: @screen-sm-min) { 
+			height: 400px;
+		}
+	}
+}
+#band {
+ 	background: url(/assets/img/bg-tra1.jpg) 100% 60px no-repeat fixed;
+	background-size: 100% auto;
+ 	overflow: hidden;
+ 	min-height: 200px;
+ 	width:100%;
+	@media (min-width: @screen-sm-min) { 
+		height: 400px;
+	}
+	-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+	-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
+	box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
 }
 #news {
 	width: 100%;
 	z-index: 100;
-	padding: 0 0 50px 0 !important;
+	padding: 50px 0;
 	color: #46403B;
 	.box{
 		margin-bottom:20px;
@@ -111,11 +127,8 @@ homepage
 	-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
 	box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
 	#mic{
-		background: none;
-		@media (min-width: @screen-md-min){
-			background: url(/assets/img/pic-microphone.png) 175% 0 no-repeat fixed;
-		}
-		background-size: 600px auto;
+		background: url(/assets/img/pic-microphone.png) 50% 0 fixed no-repeat;
+		background-size: 50% auto;
 		height: 400px;
 		width: 100%;
 		right:0;
@@ -141,6 +154,7 @@ homepage
 	background: url(/assets/img/bg-tectured-paper.png) repeat 50% 0 fixed;
 	background-size: 200px 200px;
 	overflow: hidden;
+	padding: 50px 0;
 	h1{
 		text-align: center;
 		span{
