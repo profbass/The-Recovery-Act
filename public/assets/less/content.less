@@ -6,35 +6,21 @@ General content styles
 
 // Content Banner for Sub Pages
 .content-banner{
-	background: 10% 0 no-repeat fixed;
-	background-size: 100% cover;
- 	-webkit-background-size: 100% auto;
- 	height: 200px;
+	background: 0 0 no-repeat;
+	background-size: 120% auto;
+ 	height: 120px;
 	@media (min-width: @screen-sm){
-		height: 0;
-		padding-bottom:30%;
-		background-size: 60% cover;
+		background: 10% 0 no-repeat fixed;
+		background-size: 100% cover;
+ 		height: 400px;
 	}
 	h1{
 		color: #fff;
-		text-shadow: 3px 1px 1px rgba(0,0,0,0.7); 
-	}
-	@media only screen and (min-width: 990px) {
-		h1{
-			font-size:3.3em;
-			padding-top:10%;
-		}
-	}
-	@media only screen and (min-width: 767px) and (max-width: 990px) {
-		h1{
-			font-size:2.8em;
-			padding-top:7%;
-		}
-	}
-	@media only screen and (max-width: 767px) {
-		h1{
-			font-size:2.2em; 
-			padding-top:5%;
+		text-shadow: 3px 1px 1px rgba(0,0,0,0.7);
+		font-size:1.4em; 
+		@media (min-width: @screen-sm){
+				font-size:3.3em;
+				padding-top:10%;
 		}
 	}
 }
@@ -44,36 +30,48 @@ General content styles
 homepage
 **************
 **************/
+section.section-padding{
+	padding: 0 0 15px 0;
+	@media (min-width: @screen-sm-min) { 
+		padding: 50px 0;
+	}
+}
 #home {
- 	background: url(/assets/img/bg-tra2.jpg) 100% 60px no-repeat fixed;
+ 	background: url(/assets/img/bg-tra2.jpg) 0 0 no-repeat;
 	background-size: 100% auto;
  	overflow: hidden;
- 	min-height: 200px;
+ 	min-height: 160px;
  	width:100%;
 	@media (min-width: @screen-sm-min) { 
+		background: url(/assets/img/bg-tra2.jpg) 100% 60px no-repeat fixed;
+		background-size: 100% auto;
 		height: 400px;
 	}
 	-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
 	-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
 	box-shadow: inner 0 0 13px rgba(136,136,136,0.8);
 	.welcome-text{
-		background: url(/assets/img/txt-intro.png) 100% 60px no-repeat fixed;
-		background-size: 80% auto;
-		min-height: 200px;
+		background: url(/assets/img/txt-intro.png) 100% 30px no-repeat fixed;
+		background-size: 350px auto;
+		background-position: 500px auto;
+		min-height: 160px;
 	 	width:100%;
 		@media (min-width: @screen-sm-min) { 
 			height: 400px;
+			background-size: 900px auto;
 		}
 	}
 }
 #band {
- 	background: url(/assets/img/bg-tra1.jpg) 100% 60px no-repeat fixed;
+ 	background: url(/assets/img/bg-tra3.jpg) 0 0 no-repeat;
 	background-size: 100% auto;
  	overflow: hidden;
- 	min-height: 200px;
+ 	min-height: 160px;
  	width:100%;
 	@media (min-width: @screen-sm-min) { 
-		height: 400px;
+	 	background: url(/assets/img/bg-tra3.jpg) 100% 60px no-repeat fixed;
+		background-size: 100% auto;
+		height: 380px;
 	}
 	-moz-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
 	-webkit-box-shadow: inset 0 0 13px rgba(136,136,136,0.8);
@@ -82,12 +80,41 @@ homepage
 #news {
 	width: 100%;
 	z-index: 100;
-	padding: 50px 0;
 	color: #46403B;
 	.box{
 		margin-bottom:20px;
+		@media (min-width: @screen-sm-min) { 
+		}
 		.news-content{
-			padding: 10px 25px 25px 25px;
+			padding: 5px;
+			@media (min-width: @screen-sm-min) { 
+				padding: 10px 25px 25px 25px;
+			}
+			h2{
+				font-size: 1.8em;
+				padding-top: 0;
+				margin-top: 0px; 
+				@media (min-width: @screen-sm-min) {
+
+				}
+
+			}
+		}
+	}
+	.news-container{
+		span{
+			display: block;
+			width:100%;
+			height: 160px;
+			background-size: 150% auto;
+			background-repeat: no-repeat;
+			padding-top: 160px;
+			@media (min-width: @screen-sm-min) { 
+				background-position: fixed;
+				padding-top: 100px;
+				background-size: 150% cover;
+			}
+
 		}
 	}
 	h1{
@@ -99,14 +126,19 @@ homepage
 	}
 	img{
 		width:100%;
-		height: 200px;
+		height: 160px;
+		@media (min-width: @screen-sm-min) { 
+			height: 200px;
+		}		
 	}
 	.content-banner{
 		background-image: url(/assets/img/pic-band-walking.jpg);
 	}
 	.box{
-
-	min-height:420px;
+		min-height:300px;
+		@media (min-width: @screen-sm-min) { 
+			min-height:360px;
+		}
 	}
 }
 #news-post{
@@ -154,9 +186,12 @@ homepage
 	background: url(/assets/img/bg-tectured-paper.png) repeat 50% 0 fixed;
 	background-size: 200px 200px;
 	overflow: hidden;
-	padding: 50px 0;
 	h1{
 		text-align: center;
+			font-size:2em;
+		@media (min-width: @screen-sm-min) { 
+			font-size:3em;
+		}
 		span{
 			font-size: 0.5em;
 			font-weight: 300;
@@ -169,7 +204,10 @@ homepage
 		margin: 35px 0;
 	}
 	.show-cell{
-		padding: 0 0 50px 0;
+		padding: 10px;
+		@media (min-width: @screen-sm-min) { 
+			padding: 0 0 50px 0;
+		}
 		.date-wrapper{
 			position: relative;
 			float: left;
@@ -233,6 +271,11 @@ homepage
 		padding: 0 0 0 0;
 		margin: 0;
 		line-height: 105%;
+		font-size: 1.8em;
+		background-size: 50% auto;
+	@media (min-width: @screen-sm-min) { 
+			font-size: 2.3em;
+		}
 	}
 	p.address{
 		font-weight:600;
@@ -241,6 +284,12 @@ homepage
 	}
 	.content{
 		margin: 10px 0 0 0;
+	}
+	.link-arrow-right{
+		font-size: 0.9em;
+		@media (min-width: @screen-sm-min) { 
+
+		}
 	}
 }
 

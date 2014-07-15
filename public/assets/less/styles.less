@@ -33,7 +33,10 @@ hr{
 }
 // hack for css animations
 .animatedElement{
-	opacity: 0;
+	opacity: 1;
+	@media (min-width: @screen-sm-min) {
+		opacity: 0;
+	}
 }
 .animatedElement.animated{
 	opacity: 1;

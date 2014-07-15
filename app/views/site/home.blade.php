@@ -11,14 +11,14 @@
 
 {{-- Home Image --}}
 <section id="home" class="parallax">
-	<div class="animatedElement"  data-animation="fadeIn">
+	<div>
 	 	<div class="parallax welcome-text" data-speed="0.1"></div>
 	 </div>
 </section>
 
 
 {{-- Shows --}}
-<section id="shows">
+<section id="shows" class="section-padding">
 	<article>
 		<div class="container">
 	   		<div class="row">
@@ -49,7 +49,7 @@
 				  				{{ $show->address }}
 				  				<br>
 				  			@endif
-			  				<span class="time">show starts at {{ date("g:ha",strtotime($show->date)) }}</span>
+			  				<span class="time hidden-xs">show starts at {{ date("g:ha",strtotime($show->date)) }}</span>
 			  			</p>
 			  			<ul class="sn-list">
 							@if ($show->web_link)
@@ -78,7 +78,7 @@
 					<p>&nbsp;</p>
 	   				<div class="dec-border large-bottom"></div>
 					<p>&nbsp;</p>
-					<p style="text-align:center;"> <a href="">CHECK OUT ALL OF OUR UPCOMING SHOWS <i class="fa fa-chevron-circle-right"></i></a>
+					<p class="link-arrow-right" style="text-align:center;"> <a href="">CHECK OUT ALL OF OUR UPCOMING SHOWS <i class="fa fa-chevron-circle-right"></i></a>
 					</p>
 				</div>
 			</div>
@@ -90,7 +90,7 @@
 <section id="band" class="parallax"></section>
 
 {{-- Blog Feed/News --}}
-<section id="news">
+<section id="news" class="section-padding">
 	<!-- <div id="guitar" class="parallax" data-pos="-55%" data-speed="0.8"> -->
 	   	<div class="container">
 	   		<div class="row">
@@ -102,11 +102,16 @@
 	   		</div>
 	   		<div class="row">
 
-				@foreach($blog as $posts)
-
-			  		<div class="col-xs-12 col-sm-6 col-md-4 col-md-4">
-			  			<div class="box news-container">
-				  			<img src="assets/img/bg-concert.jpg" class="img-responsive" />
+				@foreach($blog as $key => $posts)
+				
+			  		<div @if ($key === 2) 
+			  				class="hidden-xs hidden-sm col-sm-4"
+			  			@else 
+			  				class="col-xs-12 col-sm-6 col-md-4"
+			  			@endif
+			  		>
+			  			<div class="box news-container news-{{ $key }}" >
+			  				<span style="background-image: url(assets/img/bg-{{ $key }}.jpg);"></span>
 				  			<div class="news-content">
 					  			<h2>{{ $posts->title }}</h2>
 					  			<p>{{ String::tidy(Str::limit(strip_tags($posts->content, 200))) }}</p>

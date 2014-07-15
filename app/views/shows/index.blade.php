@@ -23,10 +23,10 @@
    		<div class="row">
    			<div class="row">
 				<div class="col-md-12">
-					<p>&nbsp;</p>
+					<p class="hidden-xs">&nbsp;</p>
 					<p>&nbsp;</p>
 	   				<div class="dec-border large-top"></div>
-					<p>&nbsp;</p>
+					<p class="hidden-xs">&nbsp;</p>
 				</div>
 			</div>
 

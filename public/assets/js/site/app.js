@@ -12,28 +12,30 @@ $( document ).ready(function() {
 	; 
 	
 
-	//load charts on scroll function
-	function animateElement(i, el, animationClass){
-		win.scroll(function(event) {
-			var self = $(el);
-			//console.log('scrolling');
-			if (self.visible(true) && self.hasClass('animated') == false) {
+	if (!isMobile){ 
+		//load charts on scroll function
+		function animateElement(i, el, animationClass){
+			win.scroll(function(event) {
+				var self = $(el);
+				//console.log('scrolling');
+				if (self.visible(true) && self.hasClass('animated') == false) {
+			      	self.addClass('animated ' + animationClass);
+		    	}
+		    });
+		}
+		
+		animatedObj.each(function(i, el) {
+		    var 
+		    	self = $(el),
+		    	animationClass = self.attr('data-animation')
+		    ;
+		    if (self.visible(true) && self.hasClass('animated') == false) {
 		      	self.addClass('animated ' + animationClass);
-	    	}
-	    });
+		    } else {
+		    	animateElement(i, el, animationClass);
+		    } 
+		});
 	}
-
-	animatedObj.each(function(i, el) {
-	    var 
-	    	self = $(el),
-	    	animationClass = self.attr('data-animation')
-	    ;
-	    if (self.visible(true) && self.hasClass('animated') == false) {
-	      	self.addClass('animated ' + animationClass);
-	    } else {
-	    	animateElement(i, el, animationClass);
-	    } 
-	});
 
 	
 	/**
