@@ -13,12 +13,12 @@
 		
 		@foreach($band as $member)
 
-			<article id="{{ $member->first_name }}" class="band-list parallax" data-speed="0.1">
+			<article id="{{ $member->last_name }}" class="band-list parallax" data-speed="0.1">
 				<div class="top-parallax parallax" data-speed="0.5">
 					<div class="container">
 				   		<div class="row">
 
-				   			@if ($member->first_name == "Willy" || $member->first_name == "Tyler")
+				   			@if ($member->last_name == "Williamson" || $member->last_name == "Olmsted")
 							  	<div class="col-xs-12 col-sm-6 col-md-6"></div>
 							  	<div class="col-xs-12 col-sm-6 col-md-6">
 				   			@else 
@@ -76,7 +76,7 @@
 						                </ul>
 					                @endif
 								  	@if ($member->bio)
-									  	<p class="hidden-xs">{{ $member->bio }}</p>
+									  	<p class="hidden-xs hidden-sm">{{ $member->bio }}</p>
 									@endif
 				            	</div>
 				            	<div class="dec-border bottom"></div>
